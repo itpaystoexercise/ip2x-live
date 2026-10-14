@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>See IP2X in action — IP2X Guides</title>
+<meta name="description" content="A 75-second walkthrough of the IP2X app: open it, set up, start a session, do a set, count your reps, save it and end it.">
+<meta name="theme-color" content="#050a30">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Manrope:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,300..500&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="../../" class="brand"><span class="dot"></span><span>IP2X</span></a>
+    <div class="nav-links">
+      <a href="../../#for-you">For You</a>
+      <a href="../../healthcare/">For Health Care Providers</a>
+      <a href="../../insurers/">For Insurers</a>
+      <a href="../../employers/">For Employers</a>
+      <a href="../../about/">About Us</a>
+      <a href="../../faq/">FAQ</a>
+      <a href="../../research/">Research</a>
+      <a href="mailto:hello@ip2x.com" class="btn btn-primary cta">Talk to us <span class="arrow">&rarr;</span></a>
+    </div>
+  </div>
+</nav>
+
+<section class="inner-hero legal-hero">
+  <div class="container">
+    <div class="stagger" style="max-width: 880px">
+      <div class="hero-tag">
+        <span class="pulse"></span>
+        <span>Guides &middot; the app in 75 seconds</span>
+      </div>
+      <h1>See IP2X in action</h1>
+      <p class="lede">From opening the app to a saved session: set up once, pick an exercise, do your set, count your reps, end it. Press play, or jump to any step.</p>
+      <p class="legal-crumb"><a href="../">&larr; All guides</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="block" style="padding-top: 0">
+  <div class="container">
+    <!-- The movie is one self-contained block (styles scoped under .ipm, no
+         assets, no libraries). Its screens and words mirror the app at v0.3.30;
+         when the app's copy changes, change it here too. The source of truth for
+         the movie is this file. -->
+<!-- IP2X app journey movie. Self-contained: styles scoped under .ipm, no
+     external assets, no libraries. The screens and their words mirror the app
+     at v0.3.30 (onboarding #234/#235, the Train · Activity · You skin #274).
+     When the app's copy changes, change it here too. -->
+<style>
+/* Layout: a navy stage (the site's own ground) holding a phone and a watch side
+   by side, a chapter caption beneath, chapter chips as the scrubber. The phone
+   shows the app's LIGHT skin, because that is what testers see. */
+.ipm {
+  --navy: #050a30; --navy-card: #0c1547; --blue: #bfe4f9; --pink: #ffd1ea;
+  --stage-fg: #ffffff; --stage-mute: rgba(255,255,255,0.62); --stage-line: rgba(191,228,249,0.22);
+  /* app light skin (src/ui/theme.ts, #274) */
+  --a-surface: #f4f7fb; --a-card: #ffffff; --a-line: #dde5ef; --a-text: #1f2544;
+  --a-mute: #5b6480; --a-faint: #8a93ab; --a-ink: #050a30; --a-wash: rgba(191,228,249,0.35);
+  --a-ready-bg: #e6f6ea; --a-ready: #1f7a3a; --a-danger: #c62828; --a-rec: #ff8a80;
+  --f-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --f-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-app: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  color-scheme: dark;
+  background: var(--navy); color: var(--stage-fg); font-family: var(--f-body);
+  border-radius: 24px; overflow: hidden; position: relative;
+  padding-block: 28px 22px;
+}
+.ipm *, .ipm *::before, .ipm *::after { box-sizing: border-box; }
+.ipm-stage { display: flex; align-items: center; justify-content: center; gap: 40px; padding-inline: 16px; position: relative; }
+.ipm-glow { position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(420px 320px at 35% 40%, rgba(191,228,249,0.16), transparent 70%),
+              radial-gradient(360px 300px at 70% 65%, rgba(255,209,234,0.12), transparent 70%); }
+
+/* ---------- phone ---------- */
+.ipm-phone-box { width: calc(340px * var(--k, 1)); height: calc(696px * var(--k, 1)); flex: none; position: relative; }
+.ipm-phone { width: 340px; height: 696px; transform: scale(var(--k, 1)); transform-origin: top left;
+  border-radius: 54px; background: #11163a; padding: 12px; position: absolute; top: 0; left: 0;
+  box-shadow: 0 0 0 2px rgba(191,228,249,0.25), 0 30px 80px rgba(0,0,0,0.5); }
+.ipm-screen { position: relative; width: 316px; height: 672px; border-radius: 43px; overflow: hidden;
+  background: var(--a-surface); font-family: var(--f-app); color: var(--a-text); font-size: 15px; line-height: 1.35; }
+.ipm-island { position: absolute; top: 10px; left: 50%; width: 96px; height: 28px; margin-left: -48px; background: #000; border-radius: 20px; z-index: 50; }
+.ipm-status { position: absolute; top: 0; left: 0; right: 0; height: 48px; display: flex; justify-content: space-between;
+  align-items: center; padding: 6px 30px 0; font-size: 14px; font-weight: 600; z-index: 40; color: var(--a-text); }
+.ipm-status.light { color: #fff; }
+.ipm-status i { font-style: normal; letter-spacing: 1px; font-size: 11px; }
+
+.ipm-scr { position: absolute; inset: 0; padding: 56px 18px 18px; opacity: 0; transform: translateX(24px);
+  transition: opacity .45s ease, transform .45s ease; pointer-events: none; display: flex; flex-direction: column; }
+.ipm-scr.on { opacity: 1; transform: none; }
+.ipm-scr.off { transform: translateX(-24px); }
+
+/* the finger */
+.ipm-tap { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%;
+  background: rgba(5,10,48,0.22); border: 2px solid rgba(5,10,48,0.45); z-index: 60; opacity: 0; left: 50%; top: 80%;
+  transition: left .55s cubic-bezier(.4,.1,.2,1), top .55s cubic-bezier(.4,.1,.2,1), opacity .25s, transform .15s; }
+.ipm-tap.show { opacity: 1; }
+.ipm-tap.down { transform: scale(0.72); background: rgba(5,10,48,0.38); }
+.ipm-tap.light { background: rgba(255,255,255,0.3); border-color: rgba(255,255,255,0.7); }
+
+/* shared app pieces */
+.a-mark { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 19px; color: var(--a-ink); letter-spacing: 0.5px; }
+.a-mark svg { width: 34px; height: 20px; }
+.a-title { font-size: 26px; line-height: 32px; font-weight: 700; color: var(--a-ink); margin: 0; text-wrap: balance; }
+.a-h { font-size: 22px; line-height: 28px; font-weight: 700; color: var(--a-ink); margin: 0; text-wrap: balance; }
+.a-cap { font-size: 13px; line-height: 18px; color: var(--a-mute); margin: 0; }
+.a-btn { height: 52px; border-radius: 8px; background: var(--a-ink); color: #fff; font-weight: 600; font-size: 16px;
+  display: flex; align-items: center; justify-content: center; border: 0; width: 100%; transition: opacity .3s, transform .15s; }
+.a-btn.dis { opacity: 0.35; }
+.a-btn.press, .a-opt.press, .a-tile.press, .a-seg > div.press { transform: scale(0.97); }
+.a-link { font-size: 15px; color: #22364d; text-decoration: underline; text-align: center; }
+.a-card { background: var(--a-card); border: 1px solid var(--a-line); border-radius: 12px; padding: 14px; }
+.a-chip { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 999px;
+  font-size: 13px; font-weight: 600; background: var(--a-ready-bg); color: var(--a-ready); }
+.a-chip::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.grow { flex: 1; }
+.col { display: flex; flex-direction: column; gap: 12px; }
+
+/* 1 · home screen */
+.s-home { background: linear-gradient(160deg, #1b2a6b 0%, #050a30 55%, #3a2448 100%); padding: 70px 24px; }
+.ios-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px 14px; }
+.ios-app { display: flex; flex-direction: column; align-items: center; gap: 5px; font-size: 11px; color: #fff; }
+.ios-app b { width: 58px; height: 58px; border-radius: 14px; background: rgba(255,255,255,0.14); display: block; }
+.ios-app.ip b { background: var(--navy); border: 1px solid rgba(191,228,249,0.35); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 2px; transition: transform .3s; }
+.ios-app.ip b svg { width: 36px; height: 20px; }
+.ios-app.ip b span { font-family: var(--f-display); font-size: 10px; color: #fff; letter-spacing: 0.5px; }
+.ios-zoom { position: absolute; inset: 0; background: var(--a-surface); transform: scale(0); opacity: 0; transition: transform .5s ease, opacity .3s; border-radius: 40px; z-index: 5; }
+.ios-zoom.go { transform: scale(1); opacity: 1; }
+
+/* 2 · welcome */
+.s-welcome { gap: 16px; padding-top: 80px; }
+.a-input { height: 50px; border: 1px solid var(--a-line); border-radius: 8px; background: var(--a-card); padding: 0 14px;
+  display: flex; align-items: center; font-size: 17px; color: var(--a-text); }
+.a-input .caret { width: 2px; height: 22px; background: #22364d; margin-left: 1px; animation: ipm-blink 1s steps(1) infinite; }
+@keyframes ipm-blink { 50% { opacity: 0; } }
+.a-free { font-size: 14px; color: var(--a-ready); font-weight: 600; min-height: 20px; opacity: 0; transition: opacity .3s; }
+.a-free.on { opacity: 1; }
+
+/* 3 · health sheet (a generic system sheet, drawn plainly) */
+.s-health { background: rgba(5,10,48,0.45); padding: 0; justify-content: flex-end; }
+.sheet { background: #f2f2f7; border-radius: 16px 16px 0 0; padding: 18px 16px 24px; transform: translateY(100%); transition: transform .5s cubic-bezier(.3,.8,.3,1); }
+.s-health.on .sheet { transform: none; }
+.sheet h4 { margin: 0 0 4px; font-size: 17px; text-align: center; color: #000; }
+.sheet p { margin: 0 0 12px; font-size: 13px; text-align: center; color: #6c6c70; }
+.sheet .turn { color: #0a63d1; font-size: 15px; padding: 6px 0 10px; }
+.sheet ul { list-style: none; margin: 0 0 14px; padding: 0; background: #fff; border-radius: 10px; }
+.sheet li { display: flex; justify-content: space-between; align-items: center; padding: 9px 12px; font-size: 15px; color: #000; border-bottom: 1px solid #e5e5ea; }
+.sheet li:last-child { border: 0; }
+.tog { width: 44px; height: 26px; border-radius: 13px; background: #e5e5ea; position: relative; transition: background .25s; }
+.tog::after { content: ""; position: absolute; top: 2px; left: 2px; width: 22px; height: 22px; border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.3); transition: left .25s; }
+.tog.on { background: #34c759; }
+.tog.on::after { left: 20px; }
+.sheet .allow { height: 46px; border-radius: 10px; background: #0a63d1; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 600; opacity: 0.4; transition: opacity .3s; }
+.sheet .allow.ok { opacity: 1; }
+
+/* 4 · about-you cards */
+.s-cards { gap: 14px; padding-top: 70px; }
+.dots { display: flex; gap: 6px; }
+.dots i { width: 22px; height: 4px; border-radius: 2px; background: var(--a-line); transition: background .3s; }
+.dots i.on { background: var(--a-ink); }
+.qcard { position: relative; flex: 1; }
+.qcard > div { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 12px; opacity: 0; transform: translateX(40px); transition: opacity .35s, transform .35s; }
+.qcard > div.on { opacity: 1; transform: none; }
+.qcard > div.gone { opacity: 0; transform: translateX(-40px); }
+.a-opt { height: 50px; border: 1px solid var(--a-line); background: var(--a-card); border-radius: 8px; display: flex; align-items: center; padding: 0 16px; font-size: 16px; font-weight: 600; color: var(--a-text); transition: background .2s, color .2s, transform .15s; }
+.a-opt.sel { background: var(--a-ink); color: #fff; border-color: var(--a-ink); }
+.consent { background: var(--a-wash); border-radius: 12px; padding: 16px; font-size: 15px; line-height: 22px; color: var(--a-text); }
+
+/* 5 · setup check */
+.s-check { gap: 12px; padding-top: 70px; }
+.chk { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--a-line); opacity: 0.3; transition: opacity .35s; }
+.chk.on { opacity: 1; }
+.chk b { flex: none; width: 22px; height: 22px; border-radius: 50%; background: var(--a-line); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 13px; transition: background .3s; }
+.chk.on b { background: #2e9d4f; }
+.chk div { font-size: 15px; font-weight: 600; }
+.chk small { display: block; font-size: 12px; font-weight: 400; color: var(--a-mute); margin-top: 2px; }
+.verdict { border-radius: 12px; padding: 14px; background: var(--a-ready-bg); color: var(--a-ready); font-weight: 700; opacity: 0; transition: opacity .4s; }
+.verdict.on { opacity: 1; }
+.verdict small { display: block; font-weight: 400; color: var(--a-text); margin-top: 3px; font-size: 13px; }
+
+/* 6 · train */
+.s-train { padding: 52px 0 0; }
+.t-top { display: flex; justify-content: space-between; align-items: center; padding: 6px 16px 10px; }
+.t-body { flex: 1; padding: 0 16px; display: flex; flex-direction: column; gap: 12px; overflow: hidden; }
+.t-hi { min-height: 64px; position: relative; }
+.t-hi > div { position: absolute; inset: 0; transition: opacity .35s, transform .35s; }
+.live { background: var(--navy); color: #fff; border-radius: 12px; display: flex; align-items: center; gap: 10px; padding: 0 8px 0 14px; height: 52px; opacity: 0; transform: translateY(-6px); border: 1px solid rgba(191,228,249,0.5); }
+.live .rd { width: 10px; height: 10px; border-radius: 50%; background: var(--a-rec); animation: ipm-pulse 1.2s infinite; }
+@keyframes ipm-pulse { 50% { opacity: 0.35; } }
+.live .t { font-weight: 700; font-variant-numeric: tabular-nums; font-size: 15px; }
+.live .n { color: rgba(255,255,255,0.7); font-size: 13px; }
+.live .end { margin-left: auto; height: 36px; padding: 0 14px; border-radius: 8px; background: #fff; color: var(--navy); font-weight: 700; font-size: 14px; display: flex; align-items: center; transition: transform .15s; }
+.live .end.press { transform: scale(0.94); }
+.rec .greet { opacity: 0; transform: translateY(6px); }
+.rec .live { opacity: 1; transform: none; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.a-tile { height: 62px; border-radius: 12px; background: var(--a-card); border: 1px solid var(--a-line); display: flex; align-items: center; padding: 0 14px; font-weight: 600; font-size: 16px; color: var(--a-ink); position: relative; transition: transform .15s, background .2s; }
+.a-tile.other { background: var(--a-wash); border-color: transparent; }
+.a-tile .bdg { position: absolute; top: 8px; right: 8px; min-width: 28px; height: 22px; border-radius: 999px; background: var(--a-ink); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; padding: 0 7px; transform: scale(0); transition: transform .35s cubic-bezier(.3,1.6,.5,1); }
+.a-tile .bdg.on { transform: scale(1); }
+.t-report { margin: 8px 16px 10px; height: 44px; border: 1px solid var(--a-danger); color: var(--a-danger); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; }
+.tabbar { display: flex; border-top: 1px solid var(--a-line); background: var(--a-card); height: 74px; padding-bottom: 18px; }
+.tabbar div { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; font-size: 11px; font-weight: 600; color: var(--a-faint); }
+.tabbar div.on { color: var(--a-ink); }
+.tabbar svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* 7 · exercise */
+.s-ex { gap: 12px; padding-top: 54px; }
+.ex-nav { display: flex; justify-content: space-between; align-items: center; height: 32px; }
+.ex-nav .back { color: #22364d; font-size: 16px; }
+.tchip { background: var(--navy); color: #fff; border-radius: 999px; padding: 4px 12px; font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; display: flex; gap: 6px; align-items: center; }
+.tchip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--a-rec); }
+.demo { height: 168px; border-radius: 12px; background: linear-gradient(180deg, #e9f3fb, #f9eef5); position: relative; overflow: hidden; border: 1px solid var(--a-line); }
+.demo svg { position: absolute; left: 50%; bottom: 0; height: 160px; transform: translateX(-50%); }
+.demo .pill { position: absolute; right: 10px; bottom: 10px; background: rgba(5,10,48,0.85); color: #fff; border-radius: 999px; padding: 5px 12px; font-size: 12px; font-weight: 600; }
+.fig-arm { transform-origin: 0 0; }
+.curling .fig-arm { animation: ipm-curl 1.8s ease-in-out infinite; }
+@keyframes ipm-curl { 0%, 100% { transform: rotate(0deg); } 45%, 55% { transform: rotate(-145deg); } }
+.wcard { display: flex; align-items: center; gap: 10px; }
+.wcard .a-cap { flex: 1; }
+.wcard .w { font-size: 15px; font-weight: 600; color: var(--a-text); }
+.ex-idle, .ex-run { display: flex; flex-direction: column; gap: 12px; transition: opacity .3s; }
+.ex-run { position: absolute; left: 18px; right: 18px; bottom: 28px; opacity: 0; pointer-events: none; align-items: center; text-align: center; }
+.s-ex.running .ex-idle { opacity: 0; }
+.s-ex.running .ex-run { opacity: 1; }
+.bigt { font-size: 60px; line-height: 64px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--a-ink); letter-spacing: -1px; }
+.reps-live { font-size: 13px; color: var(--a-mute); }
+
+/* 8 · reps sheet */
+.ovl { position: absolute; inset: 0; background: rgba(5,10,48,0.45); opacity: 0; transition: opacity .35s; z-index: 30; pointer-events: none; display: flex; flex-direction: column; justify-content: flex-end; }
+.ovl.on { opacity: 1; }
+.rsheet { background: var(--a-card); border-radius: 16px 16px 0 0; padding: 18px 18px 30px; display: flex; flex-direction: column; gap: 12px; transform: translateY(100%); transition: transform .45s cubic-bezier(.3,.8,.3,1); }
+.ovl.on .rsheet { transform: none; }
+.stepper { display: flex; align-items: center; justify-content: center; gap: 26px; }
+.stepper b { width: 52px; height: 48px; border-radius: 8px; border: 1px solid var(--a-line); display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: 600; color: var(--a-ink); transition: transform .15s; }
+.stepper b.press { transform: scale(0.9); background: var(--a-wash); }
+.stepper span { font-size: 40px; font-weight: 700; font-variant-numeric: tabular-nums; min-width: 56px; text-align: center; color: var(--a-ink); }
+.a-seg { display: flex; border: 1px solid var(--a-line); border-radius: 8px; overflow: hidden; }
+.a-seg > div { flex: 1; height: 44px; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 15px; color: var(--a-text); transition: background .2s, color .2s, transform .15s; }
+.a-seg > div + div { border-left: 1px solid var(--a-line); }
+.a-seg > div.sel { background: var(--a-ink); color: #fff; }
+.toast { position: absolute; left: 18px; right: 18px; top: 60px; background: var(--navy); color: #fff; border-radius: 12px; padding: 12px 14px; font-size: 14px; font-weight: 600; z-index: 35; opacity: 0; transform: translateY(-10px); transition: opacity .3s, transform .3s; }
+.toast.on { opacity: 1; transform: none; }
+
+/* 9 · end dialog + activity */
+.ovl.mid { justify-content: center; padding: 0 30px; }
+.dlg { background: var(--a-card); border-radius: 16px; padding: 20px 18px 14px; text-align: center; transform: scale(0.92); transition: transform .3s; display: flex; flex-direction: column; gap: 10px; }
+.ovl.on .dlg { transform: none; }
+.dlg .a-btn { height: 46px; font-size: 15px; }
+.s-act { gap: 12px; padding: 56px 0 0; }
+.s-act .in { padding: 0 16px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.up { display: flex; gap: 10px; align-items: center; font-weight: 700; font-size: 17px; color: var(--a-ink); }
+.up .spin { width: 18px; height: 18px; border-radius: 50%; border: 2px solid var(--a-line); border-top-color: var(--a-ink); animation: ipm-spin .8s linear infinite; }
+.up.done .spin { animation: none; border-color: #2e9d4f; background: #2e9d4f; }
+@keyframes ipm-spin { to { transform: rotate(360deg); } }
+.lbl { font-size: 11px; line-height: 14px; font-weight: 600; letter-spacing: 0.6px; text-transform: uppercase; color: var(--a-mute); }
+.srow { display: flex; justify-content: space-between; align-items: center; }
+.srow .a-chip { height: 24px; font-size: 12px; }
+.wk { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+.wk b { display: block; font-size: 22px; color: var(--a-ink); font-variant-numeric: tabular-nums; }
+.wk span { font-size: 12px; color: var(--a-mute); }
+
+/* ---------- watch ---------- */
+.ipm-watch { width: 150px; flex: none; display: flex; flex-direction: column; align-items: center; transition: opacity .4s; }
+.ipm-watch .strap { width: 92px; height: 60px; background: #1a2150; border-radius: 10px; }
+.ipm-watch .case { width: 150px; height: 180px; border-radius: 42px; background: #11163a; padding: 10px; box-shadow: 0 0 0 2px rgba(191,228,249,0.25), 0 20px 50px rgba(0,0,0,0.5); position: relative; }
+.ipm-watch .case::after { content: ""; position: absolute; right: -7px; top: 50px; width: 8px; height: 30px; border-radius: 4px; background: #2a3270; }
+.wface { width: 100%; height: 100%; border-radius: 34px; background: #000; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; font-family: var(--f-app); }
+.wface .wl { font-size: 12px; color: rgba(255,255,255,0.6); }
+.wface .wt { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.wface .hr { font-size: 15px; color: var(--a-rec); font-weight: 600; font-variant-numeric: tabular-nums; }
+.wface .wm svg { width: 54px; height: 30px; }
+.ipm-watch .lab { margin-top: 12px; font-size: 12px; color: var(--stage-mute); text-align: center; }
+
+/* ---------- caption + controls ---------- */
+.ipm-cap { text-align: center; padding: 22px 16px 0; min-height: 100px; position: relative; }
+.ipm-cap .eb { font-size: 12px; font-weight: 600; letter-spacing: 1.4px; text-transform: uppercase; color: var(--blue); }
+.ipm-cap h3 { font-family: var(--f-display); font-weight: 600; font-size: clamp(22px, 3.2vw, 30px); line-height: 1.2; margin: 6px 0 4px; text-wrap: balance; color: #fff; }
+.ipm-cap p { margin: 0 auto; max-width: 52ch; color: var(--stage-mute); font-size: 15px; line-height: 1.5; }
+.ipm-bar { display: flex; align-items: center; gap: 10px; padding: 16px 16px 0; justify-content: center; flex-wrap: wrap; }
+.ipm-play { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--stage-line); background: rgba(191,228,249,0.1); color: #fff; display: flex; align-items: center; justify-content: center; cursor: pointer; flex: none; }
+.ipm-play svg { width: 16px; height: 16px; fill: currentColor; }
+.ipm-chaps { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.ipm-chaps button { position: relative; overflow: hidden; font: 600 12px/1 var(--f-body); color: var(--stage-mute); background: transparent; border: 1px solid var(--stage-line); border-radius: 999px; padding: 8px 11px; cursor: pointer; }
+.ipm-chaps button.on { color: var(--navy); background: var(--blue); border-color: var(--blue); }
+.ipm-chaps button.done { color: #fff; }
+.ipm-chaps button i { position: absolute; left: 0; bottom: 0; height: 2px; background: var(--pink); width: 0; }
+.ipm button:focus-visible { outline: 2px solid var(--pink); outline-offset: 2px; }
+
+/* the closing card */
+.ipm-end { position: absolute; inset: 0; z-index: 70; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding: 24px; background: rgba(5,10,48,0.9); opacity: 0; pointer-events: none; transition: opacity .6s; }
+.ipm-end.on { opacity: 1; pointer-events: auto; }
+.ipm-end svg { width: 90px; height: 50px; }
+.ipm-end h3 { font-family: var(--f-display); font-size: clamp(30px, 5vw, 48px); font-weight: 600; margin: 0; line-height: 1.1; }
+.ipm-end h3 em { font-style: italic; color: var(--pink); }
+.ipm-end p { margin: 0; color: var(--stage-mute); max-width: 44ch; line-height: 1.5; }
+.ipm-end .row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.ipm-end a, .ipm-end button { font: 600 15px/1 var(--f-body); border-radius: 999px; padding: 13px 20px; text-decoration: none; cursor: pointer; }
+.ipm-end a { background: var(--blue); color: var(--navy); border: 0; }
+.ipm-end button { background: transparent; color: #fff; border: 1px solid var(--stage-line); }
+
+@media (max-width: 720px) {
+  .ipm-watch { display: none; }
+  .ipm { border-radius: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ipm *, .ipm *::before, .ipm *::after { transition-duration: 0s !important; animation: none !important; }
+}
+</style>
+
+<div class="ipm" id="ipm" aria-roledescription="animated walkthrough">
+  <div class="ipm-glow"></div>
+  <div class="ipm-stage">
+    <div class="ipm-phone-box" id="ipm-pbox">
+      <div class="ipm-phone" aria-hidden="true">
+        <div class="ipm-screen" id="ipm-screen">
+          <div class="ipm-island"></div>
+          <div class="ipm-status" id="ipm-status"><span>9:41</span><i>●●● ▮</i></div>
+          <div class="ipm-tap" id="ipm-tap"></div>
+
+          <!-- 1 home screen -->
+          <div class="ipm-scr s-home" data-s="home">
+            <div class="ios-grid">
+              <div class="ios-app"><b></b>Mail</div><div class="ios-app"><b></b>Photos</div><div class="ios-app"><b></b>Maps</div><div class="ios-app"><b></b>Clock</div>
+              <div class="ios-app"><b></b>Health</div><div class="ios-app"><b></b>Watch</div><div class="ios-app"><b></b>TestFlight</div>
+              <div class="ios-app ip" id="t-icon"><b><svg viewBox="0 0 60 32"><use href="#ipm-inf"/></svg><span>IP2X</span></b>IP2X</div>
+            </div>
+            <div class="ios-zoom" id="ios-zoom"></div>
+          </div>
+
+          <!-- 2 welcome -->
+          <div class="ipm-scr s-welcome" data-s="welcome">
+            <div class="a-mark"><svg viewBox="0 0 60 32"><use href="#ipm-inf"/></svg>IP2X</div>
+            <h2 class="a-title">Welcome to IP2X</h2>
+            <p class="a-cap" style="font-size:15px;line-height:22px">IP2X collects health and workout data from your phone and watch and uploads it for analysis.</p>
+            <div class="col" style="gap:6px">
+              <div class="lbl">What's your name?</div>
+              <div class="a-input"><span id="t-name"></span><span class="caret"></span></div>
+              <div class="a-free" id="t-free">✓ free</div>
+            </div>
+            <div class="grow"></div>
+            <div class="a-btn dis" id="t-setup">Let's get set up</div>
+            <div class="a-link" style="font-size:13px">Have a code from your old phone?</div>
+          </div>
+
+          <!-- 3 health -->
+          <div class="ipm-scr s-health" data-s="health">
+            <div class="sheet">
+              <h4>Health Access</h4>
+              <p>IP2X would like to read data from Health</p>
+              <div class="turn" id="t-allon">Turn On All</div>
+              <ul>
+                <li>Heart Rate <span class="tog"></span></li>
+                <li>Workouts <span class="tog"></span></li>
+                <li>Active Energy <span class="tog"></span></li>
+                <li>Date of Birth <span class="tog"></span></li>
+                <li>Height <span class="tog"></span></li>
+                <li>Weight <span class="tog"></span></li>
+              </ul>
+              <div class="allow" id="t-allow">Allow</div>
+            </div>
+          </div>
+
+          <!-- 4 about you -->
+          <div class="ipm-scr s-cards" data-s="cards">
+            <div class="dots" id="t-dots"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="qcard" id="t-q">
+              <div data-q="0">
+                <h2 class="a-h">A few questions about you</h2>
+                <div class="consent">They help us read your heart rate fairly and map your watch's movement. We keep them with your name only. You can change or delete them any time.</div>
+                <div class="grow"></div>
+                <div class="a-btn" id="t-agree">I agree, continue</div>
+              </div>
+              <div data-q="1">
+                <h2 class="a-h">Which wrist do you wear your watch on?</h2>
+                <div class="a-opt" id="t-left">Left</div><div class="a-opt">Right</div><div class="a-opt">I don't wear one</div>
+              </div>
+              <div data-q="2">
+                <h2 class="a-h">How often do you train?</h2>
+                <div class="a-opt">Rarely</div><div class="a-opt">1–2 a week</div><div class="a-opt" id="t-34">3–4 a week</div><div class="a-opt">5+ a week</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 setup check -->
+          <div class="ipm-scr s-check" data-s="check">
+            <h2 class="a-h">Check my setup</h2>
+            <p class="a-cap">Hi sam. Checking the phone and the watch…</p>
+            <div>
+              <div class="chk"><b>✓</b><div>Health permissions granted<small>Granted.</small></div></div>
+              <div class="chk"><b>✓</b><div>Watch paired, app installed<small>A watch is paired and the app is installed.</small></div></div>
+              <div class="chk"><b>✓</b><div>Motion &amp; Fitness granted on the watch</div></div>
+              <div class="chk"><b>✓</b><div>Phone can reach the server<small>Online. Nothing has needed uploading yet.</small></div></div>
+            </div>
+            <div class="verdict" id="t-verdict">Ready to record<small>Everything that applies to your setup is working.</small></div>
+            <div class="grow"></div>
+            <div class="a-btn" id="t-cont">Continue</div>
+          </div>
+
+          <!-- 6 train -->
+          <div class="ipm-scr s-train" data-s="train" id="t-train">
+            <div class="t-top">
+              <div class="a-mark"><svg viewBox="0 0 60 32"><use href="#ipm-inf"/></svg>IP2X</div>
+              <span class="a-chip">Watch ready</span>
+            </div>
+            <div class="t-body">
+              <div class="t-hi">
+                <div class="greet"><h2 class="a-title">Hi sam</h2><p class="a-cap" style="font-size:15px">Nothing is recording. Tap an exercise to begin.</p></div>
+                <div class="live" style="top:6px;bottom:auto"><span class="rd"></span><span class="t" id="t-livet">Recording · 00:00</span><span class="n" id="t-sets">1 set</span><span class="end" id="t-end">End</span></div>
+              </div>
+              <div class="tiles">
+                <div class="a-tile">Chest</div><div class="a-tile">Back</div>
+                <div class="a-tile">Legs</div><div class="a-tile" id="t-biceps">Biceps<span class="bdg" id="t-bdg">×1</span></div>
+                <div class="a-tile">Shoulders</div><div class="a-tile">Triceps</div>
+                <div class="a-tile">Abs</div><div class="a-tile other">Other ›</div>
+              </div>
+              <div class="a-link" style="padding-top:4px">Just trying it out? Practice a set</div>
+            </div>
+            <div class="t-report">Report a problem</div>
+            <div class="tabbar">
+              <div class="on" id="tab-train"><svg viewBox="0 0 24 24"><path d="M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12"/></svg>Train</div>
+              <div id="tab-act"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>Activity</div>
+              <div><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>You</div>
+            </div>
+            <div class="ovl mid" id="t-dlg">
+              <div class="dlg">
+                <h2 class="a-h" style="font-size:19px">End the session?</h2>
+                <p class="a-cap">1 set · Bicep Curls</p>
+                <div class="a-btn" id="t-endsave">End session, save it</div>
+                <div class="a-link" style="padding:6px 0">Keep going</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 exercise -->
+          <div class="ipm-scr s-ex" data-s="ex" id="t-ex">
+            <div class="ex-nav"><span class="back">‹ Train</span><span class="tchip" id="t-chip">00:04</span></div>
+            <div><h2 class="a-title">Bicep Curls</h2><p class="a-cap">Set 1 this session · Arms</p></div>
+            <div class="demo" id="t-demo">
+              <svg viewBox="0 0 120 160" aria-hidden="true">
+                <!-- side view, facing right: the forearm curls forward and up about the elbow -->
+                <g stroke="#050a30" stroke-width="6" stroke-linecap="round" fill="none">
+                  <circle cx="56" cy="24" r="12" fill="#050a30" stroke="none"/>
+                  <path d="M56 40v56M56 96l-6 58M56 96l8 58M56 50l4 40"/>
+                </g>
+                <g transform="translate(60 90)"><g class="fig-arm">
+                  <path d="M0 0v28" stroke="#050a30" stroke-width="6" stroke-linecap="round"/>
+                  <rect x="-5" y="14" width="10" height="9" rx="2" fill="#bfe4f9" stroke="#050a30" stroke-width="2"/>
+                  <rect x="-12" y="28" width="24" height="7" rx="3" fill="#ff8ab8"/>
+                </g></g>
+              </svg>
+              <span class="pill">Watch demo ▶</span>
+            </div>
+            <div class="ex-idle">
+              <div class="a-card wcard"><div class="a-cap"><span class="lbl">Watch</span><br><span class="w">Left wrist · crown toward your hand</span></div><span class="a-link" style="font-size:14px">Change</span></div>
+              <p class="a-cap">Start when you are in position. Tap Done after your last rep.</p>
+              <div class="a-btn" id="t-start">Start</div>
+            </div>
+            <div class="ex-run">
+              <div class="bigt" id="t-bigt">0:00</div>
+              <p class="a-cap">The watch is recording your movement</p>
+              <div class="a-btn" id="t-done" style="margin-top:6px">Done</div>
+              <div class="a-link" style="font-size:14px">Cancel this set</div>
+            </div>
+            <div class="ovl" id="t-reps">
+              <div class="rsheet">
+                <p class="a-cap">Set 1 · Bicep Curls · <span id="t-dur">0:38</span></p>
+                <h2 class="a-h" style="font-size:20px">How many reps did you manage?</h2>
+                <div class="stepper"><b id="t-minus">−</b><span id="t-n">10</span><b id="t-plus">+</b></div>
+                <p class="a-cap" style="text-align:center">Count what you managed. 0 counts too.</p>
+                <div class="lbl" style="padding-top:2px">Was this a real set?</div>
+                <div class="a-seg"><div id="t-real">Real set</div><div>Spoof</div></div>
+                <div class="a-btn dis" id="t-save">Save set</div>
+              </div>
+            </div>
+            <div class="toast" id="t-toast">Set saved · 12 reps</div>
+          </div>
+
+          <!-- 9 activity -->
+          <div class="ipm-scr s-act" data-s="act">
+            <div class="in">
+              <h2 class="a-title">Activity</h2>
+              <div class="a-card col" style="gap:6px">
+                <div class="up" id="t-up"><span class="spin"></span><span id="t-upt">Uploading 214 records</span></div>
+                <p class="a-cap">Watch ready · Health access allowed</p>
+              </div>
+              <div class="lbl">Today</div>
+              <div class="a-card col" style="gap:4px">
+                <div class="srow"><b style="font-size:16px;color:var(--a-ink)">18:04 · 4 min · 1 set</b><span class="a-chip">watch</span></div>
+                <p class="a-cap">Bicep Curls ×1</p>
+              </div>
+              <div class="lbl">This week</div>
+              <div class="a-card wk"><div><b>1</b><span>sessions</span></div><div><b>1</b><span>sets</span></div><div><b>4m</b><span>recorded</span></div></div>
+              <div class="grow"></div>
+            </div>
+            <div class="tabbar">
+              <div><svg viewBox="0 0 24 24"><path d="M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12"/></svg>Train</div>
+              <div class="on"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>Activity</div>
+              <div><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>You</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ipm-watch" aria-hidden="true" id="ipm-watch">
+      <div class="strap"></div>
+      <div class="case"><div class="wface" id="w-face">
+        <div class="wm"><svg viewBox="0 0 60 32"><use href="#ipm-inf"/></svg></div>
+        <div class="wl" id="w-l">IP2X</div>
+        <div class="wt" id="w-t" hidden>0:00</div>
+        <div class="hr" id="w-hr" hidden>♥ 96</div>
+      </div></div>
+      <div class="strap"></div>
+      <div class="lab" id="w-lab">Apple Watch, left wrist</div>
+    </div>
+  </div>
+
+  <div class="ipm-cap" aria-live="polite">
+    <div class="eb" id="c-eb">Step 1 of 9</div>
+    <h3 id="c-h">Open IP2X</h3>
+    <p id="c-p">Install it from your TestFlight invite, then tap the icon.</p>
+  </div>
+  <div class="ipm-bar">
+    <button class="ipm-play" id="ipm-play" type="button" aria-label="Pause"><svg viewBox="0 0 16 16" id="ipm-play-i"><path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z"/></svg></button>
+    <div class="ipm-chaps" id="ipm-chaps"></div>
+  </div>
+
+  <div class="ipm-end" id="ipm-end">
+    <svg viewBox="0 0 60 32" aria-hidden="true"><use href="#ipm-inf"/></svg>
+    <h3>Train. Count. <em>Save.</em></h3>
+    <p>That's a whole session. Your watch recorded the movement and heart rate, you told us the reps, and it's uploaded.</p>
+    <div class="row"><a href="../apple/" id="ipm-guide">Read the setup guide</a><button type="button" id="ipm-again">Watch again</button></div>
+  </div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- the logo's infinity: blue left loop, pink right loop -->
+      <g id="ipm-inf" fill="none" stroke-width="6" stroke-linecap="round">
+        <path d="M30 16C24 8 19 5 13.5 5A11 11 0 0 0 13.5 27C19 27 24 24 30 16" stroke="#bfe4f9"/>
+        <path d="M30 16C36 24 41 27 46.5 27A11 11 0 0 0 46.5 5C41 5 36 8 30 16" stroke="#ffd1ea"/>
+      </g>
+    </defs>
+  </svg>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('ipm');
+  if (!root) return;
+  var $ = function (id) { return document.getElementById(id); };
+  var screen = $('ipm-screen'), tap = $('ipm-tap'), pbox = $('ipm-pbox');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- fit the phone to the space it has ----
+  function fit() {
+    var avail = root.clientWidth - 32;
+    var k = Math.min(1, avail / 340, (window.innerHeight * 0.72) / 696);
+    k = Math.max(0.55, k);
+    pbox.style.setProperty('--k', k.toFixed(3));
+    pbox.firstElementChild.style.setProperty('--k', k.toFixed(3));
+  }
+  fit(); window.addEventListener('resize', fit);
+
+  // ---- a pausable clock: wait() only counts time while playing ----
+  var paused = false, run = 0, rate = reduce ? 0.6 : 1;
+  function wait(ms, token) {
+    return new Promise(function (res, rej) {
+      var left = ms * rate, last = performance.now();
+      function tick(now) {
+        if (token !== run) return rej('cancel');
+        if (!paused) left -= now - last;
+        last = now;
+        if (left <= 0) res(); else requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  function show(name) {
+    root.querySelectorAll('.ipm-scr').forEach(function (s) {
+      var on = s.getAttribute('data-s') === name;
+      if (s.classList.contains('on') && !on) { s.classList.add('off'); }
+      if (on) s.classList.remove('off');
+      s.classList.toggle('on', on);
+    });
+    $('ipm-status').classList.toggle('light', name === 'home');
+    tap.classList.toggle('light', name === 'home');
+  }
+  function k() { return parseFloat(pbox.style.getPropertyValue('--k')) || 1; }
+  async function press(el, t, extraMs) {
+    var r = el.getBoundingClientRect(), s = screen.getBoundingClientRect(), kk = k();
+    tap.style.left = ((r.left + r.width / 2 - s.left) / kk) + 'px';
+    tap.style.top = ((r.top + r.height / 2 - s.top) / kk) + 'px';
+    tap.classList.add('show');
+    await wait(650, t);
+    tap.classList.add('down'); el.classList.add('press');
+    await wait(180, t);
+    tap.classList.remove('down'); el.classList.remove('press');
+    await wait(extraMs || 250, t);
+  }
+  function hideTap() { tap.classList.remove('show'); }
+  function mmss(sec) { var m = Math.floor(sec / 60), s = sec % 60; return m + ':' + (s < 10 ? '0' : '') + s; }
+  function mmss2(sec) { var m = Math.floor(sec / 60), s = sec % 60; return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s; }
+
+  function watch(state, sec, hr) {
+    $('w-l').textContent = state === 'run' ? 'Recording' : state === 'ready' ? 'Ready' : 'IP2X';
+    $('w-t').hidden = state !== 'run'; $('w-hr').hidden = state !== 'run';
+    if (sec != null) $('w-t').textContent = mmss(sec);
+    if (hr != null) $('w-hr').textContent = '♥ ' + hr;
+  }
+
+  // Reset every piece of state, so any chapter can start cold.
+  function reset() {
+    hideTap();
+    $('ios-zoom').classList.remove('go');
+    $('t-name').textContent = ''; $('t-free').classList.remove('on'); $('t-setup').classList.add('dis');
+    root.querySelectorAll('.tog').forEach(function (x) { x.classList.remove('on'); });
+    $('t-allow').classList.remove('ok');
+    root.querySelectorAll('#t-q > div').forEach(function (x) { x.classList.remove('on', 'gone'); });
+    root.querySelectorAll('.a-opt').forEach(function (x) { x.classList.remove('sel'); });
+    root.querySelectorAll('#t-dots i').forEach(function (x) { x.classList.remove('on'); });
+    root.querySelectorAll('.chk').forEach(function (x) { x.classList.remove('on'); });
+    $('t-verdict').classList.remove('on');
+    $('t-train').classList.remove('rec'); $('t-bdg').classList.remove('on'); $('t-dlg').classList.remove('on');
+    $('tab-train').classList.add('on'); $('tab-act').classList.remove('on');
+    $('t-ex').classList.remove('running'); $('t-demo').classList.remove('curling');
+    $('t-reps').classList.remove('on'); $('t-real').classList.remove('sel'); $('t-save').classList.add('dis');
+    $('t-n').textContent = '10'; $('t-toast').classList.remove('on');
+    $('t-up').classList.remove('done'); $('t-upt').textContent = 'Uploading 214 records';
+    $('ipm-end').classList.remove('on');
+    watch('idle');
+  }
+
+  var CH = [
+    { id: 'open', chip: 'Open', h: 'Open IP2X', p: 'Install it from your TestFlight invite, then tap the icon.', run: async function (t) {
+      show('home'); await wait(900, t);
+      await press($('t-icon'), t, 100); hideTap();
+      $('ios-zoom').classList.add('go'); await wait(700, t);
+    } },
+    { id: 'name', chip: 'Name', h: 'Choose your name', p: 'It keeps all your sessions together. The app checks it is free while you type.', run: async function (t) {
+      show('welcome'); await wait(700, t);
+      var name = 'sam';
+      for (var i = 1; i <= name.length; i++) { $('t-name').textContent = name.slice(0, i); await wait(260, t); }
+      await wait(400, t); $('t-free').classList.add('on'); $('t-setup').classList.remove('dis');
+      await wait(700, t); await press($('t-setup'), t); hideTap(); await wait(300, t);
+    } },
+    { id: 'health', chip: 'Health', h: 'Allow Health access', p: 'Turn everything on. IP2X reads your heart rate and workouts from Health; it never writes to it.', run: async function (t) {
+      show('health'); await wait(900, t);
+      await press($('t-allon'), t, 100);
+      var tg = root.querySelectorAll('.tog');
+      for (var i = 0; i < tg.length; i++) { tg[i].classList.add('on'); await wait(90, t); }
+      $('t-allow').classList.add('ok'); await wait(400, t);
+      await press($('t-allow'), t); hideTap(); await wait(200, t);
+    } },
+    { id: 'you', chip: 'About you', h: 'A few questions about you', p: 'Eight quick cards, one per swipe: birthday, sex, height, weight, wrist, hand, training and medication.', run: async function (t) {
+      show('cards');
+      var q = root.querySelectorAll('#t-q > div'), d = root.querySelectorAll('#t-dots i');
+      q[0].classList.add('on'); d[0].classList.add('on'); await wait(1600, t);
+      await press($('t-agree'), t, 100);
+      q[0].classList.add('gone'); q[1].classList.add('on'); d[1].classList.add('on'); hideTap(); await wait(900, t);
+      await press($('t-left'), t, 50); $('t-left').classList.add('sel'); await wait(500, t);
+      q[1].classList.add('gone'); q[2].classList.add('on');
+      for (var i = 2; i < 7; i++) { d[i].classList.add('on'); await wait(110, t); }
+      hideTap(); await wait(600, t);
+      await press($('t-34'), t, 50); $('t-34').classList.add('sel'); d[7].classList.add('on'); await wait(700, t); hideTap();
+    } },
+    { id: 'check', chip: 'Setup', h: 'Check my setup', p: 'One look at the phone, the watch and the connection. Green across the board means you are ready to record.', run: async function (t) {
+      show('check'); watch('ready'); await wait(700, t);
+      var c = root.querySelectorAll('.chk');
+      for (var i = 0; i < c.length; i++) { c[i].classList.add('on'); await wait(520, t); }
+      $('t-verdict').classList.add('on'); await wait(1200, t);
+      await press($('t-cont'), t); hideTap();
+    } },
+    { id: 'pick', chip: 'Pick', h: 'Tap an exercise to begin', p: 'Train is home. There is no start button: your first exercise starts the session.', run: async function (t) {
+      show('train'); watch('ready'); await wait(1800, t);
+      await press($('t-biceps'), t); hideTap();
+    } },
+    { id: 'set', chip: 'Set', h: 'Start, lift, tap Done', p: 'Check how the watch is worn, tap Start and do your reps. The watch records your movement and heart rate.', run: async function (t) {
+      show('ex'); watch('ready'); $('t-chip').textContent = '00:04'; await wait(1500, t);
+      await press($('t-start'), t); hideTap();
+      $('t-ex').classList.add('running'); $('t-demo').classList.add('curling');
+      var hr = 96;
+      for (var s = 0; s <= 38; s += 2) {
+        $('t-bigt').textContent = mmss(s); $('t-chip').textContent = mmss2(s + 6);
+        hr = Math.min(132, hr + (s < 30 ? 2 : 0)); watch('run', s, hr);
+        await wait(s === 38 ? 250 : 210, t);
+      }
+      await press($('t-done'), t); hideTap(); $('t-demo').classList.remove('curling'); watch('ready');
+    } },
+    { id: 'reps', chip: 'Reps', h: 'Count your reps, mark it real', p: 'Say how many you managed. Then choose Real set or Spoof; nothing is picked for you, so a fake never slips in as real.', run: async function (t) {
+      show('ex'); watch('ready'); $('t-ex').classList.add('running'); $('t-reps').classList.add('on'); await wait(1300, t);
+      await press($('t-plus'), t, 80); $('t-n').textContent = '11';
+      await press($('t-plus'), t, 80); $('t-n').textContent = '12'; await wait(300, t);
+      await press($('t-real'), t, 80); $('t-real').classList.add('sel'); $('t-save').classList.remove('dis'); await wait(500, t);
+      await press($('t-save'), t); hideTap();
+      $('t-reps').classList.remove('on'); $('t-toast').classList.add('on'); await wait(1300, t);
+    } },
+    { id: 'end', chip: 'End', h: 'End the session and save it', p: 'Do more sets, or tap End. Everything you recorded uploads on its own.', run: async function (t) {
+      show('train'); watch('ready'); $('t-train').classList.add('rec'); $('t-bdg').classList.add('on');
+      for (var s = 48; s <= 54; s++) { $('t-livet').textContent = 'Recording · ' + mmss2(s); await wait(s === 48 ? 600 : 280, t); }
+      await press($('t-end'), t); $('t-dlg').classList.add('on'); hideTap(); await wait(1000, t);
+      await press($('t-endsave'), t); hideTap();
+      $('t-dlg').classList.remove('on'); $('t-train').classList.remove('rec'); await wait(500, t);
+      show('act'); await wait(1600, t);
+      $('t-up').classList.add('done'); $('t-upt').textContent = 'Everything is uploaded'; await wait(2200, t);
+      $('ipm-end').classList.add('on');
+    } }
+  ];
+
+  // chapter chips double as the progress bar
+  var chaps = $('ipm-chaps');
+  CH.forEach(function (c, i) {
+    var b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = c.chip + '<i></i>';
+    b.setAttribute('aria-label', 'Step ' + (i + 1) + ': ' + c.h);
+    b.addEventListener('click', function () { playFrom(i); });
+    chaps.appendChild(b);
+  });
+
+  function caption(i) {
+    $('c-eb').textContent = 'Step ' + (i + 1) + ' of ' + CH.length;
+    $('c-h').textContent = CH[i].h; $('c-p').textContent = CH[i].p;
+    chaps.querySelectorAll('button').forEach(function (b, j) { b.classList.toggle('on', j === i); b.classList.toggle('done', j < i); });
+  }
+
+  async function playFrom(i) {
+    var t = ++run; paused = false; setPlayIcon();
+    reset();
+    // put the train screen in its recording state when jumping straight to End
+    try {
+      for (var j = i; j < CH.length; j++) {
+        caption(j);
+        if (j > 0 && j === i) prime(j);
+        await CH[j].run(t);
+        await wait(500, t);
+      }
+    } catch (e) { if (e !== 'cancel') throw e; }
+  }
+  function prime(j) {
+    if (CH[j].id === 'reps') $('t-bigt').textContent = '0:38';
+  }
+
+  function setPlayIcon() {
+    $('ipm-play-i').innerHTML = paused ? '<path d="M4 2l10 6-10 6z"/>' : '<path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z"/>';
+    $('ipm-play').setAttribute('aria-label', paused ? 'Play' : 'Pause');
+  }
+  $('ipm-play').addEventListener('click', function () {
+    if ($('ipm-end').classList.contains('on')) { playFrom(0); return; }
+    paused = !paused; setPlayIcon();
+  });
+  $('ipm-again').addEventListener('click', function () { playFrom(0); });
+
+  // Start when the movie scrolls into view; pause when it leaves.
+  var started = false;
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !started) { started = true; playFrom(0); }
+        else if (!e.isIntersecting && started && !paused) { paused = true; setPlayIcon(); }
+      });
+    }, { threshold: 0.35 }).observe(root);
+  } else { started = true; playFrom(0); }
+  // the resting frame before playback: the Train home, which is what the app is
+  show('train'); caption(5); chaps.querySelectorAll('button').forEach(function (b) { b.classList.remove('on', 'done'); });
+  $('c-eb').textContent = 'The IP2X app, start to finish'; $('c-h').textContent = 'From install to a saved session'; $('c-p').textContent = 'Nine short steps. Press play, or jump to any step.';
+})();
+</script>
+
+    <p style="margin-top: 18px; font-size: 14px; opacity: 0.7; max-width: 70ch">The phone and watch are illustrations drawn from the app's own on-screen words. The name and numbers shown are examples. For the full setup, including both must-dos, read <a href="../apple/">Getting started on iPhone and Apple Watch</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <a href="../../" class="brand"><span class="dot"></span><span>IP2X</span></a>
+      <div class="foot-links">
+        <a href="../../#for-you">For You</a>
+        <a href="../../healthcare/">For Health Care Providers</a>
+        <a href="../../insurers/">For Insurers</a>
+        <a href="../../employers/">For Employers</a>
+        <a href="../../about/">About Us</a>
+        <a href="../../faq/">FAQ</a>
+        <a href="../../research/">Research</a>
+        <a href="../../guides/">Guides</a>
+        <a href="../../legal/">Legal</a>
+        <a href="mailto:hello@ip2x.com">hello@ip2x.com</a>
+      </div>
+    </div>
+    <div class="foot-social" aria-label="Social media — coming soon">
+      <span class="social-icon" role="img" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+      <span class="social-icon" role="img" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h2.5V6H14c-2 0-3 1.2-3 3v1.5H9V13h2v6h2.5v-6H16l.5-2.5H13.5V9.2c0-.5.2-.7.7-.7z"/></svg></span>
+      <span class="social-icon" role="img" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 8.2s-.2-1.4-.8-2c-.7-.8-1.6-.8-2-.9C16 5.1 12 5.1 12 5.1s-4 0-6.7.2c-.4 0-1.3.1-2 .9-.6.6-.8 2-.8 2S2.3 9.8 2.3 11.5v1.1c0 1.7.2 3.3.2 3.3s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.6.2 6.6.2s4 0 6.7-.2c.4 0 1.3-.1 2-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.1c0-1.7-.2-3.3-.2-3.3zM9.9 14.6V9.8l4.3 2.4-4.3 2.4z"/></svg></span>
+    </div>
+    <div class="foot-meta">&copy; IP2X 2026. It Pays To Exercise. Registered in England, company number 17151019.</div>
+  </div>
+</footer>
+
+<script src="../../assets/js/main.js" defer></script>
+</body>
+</html>
