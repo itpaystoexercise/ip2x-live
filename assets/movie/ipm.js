@@ -213,7 +213,7 @@ var MARKUP = `
 
   <div class="ipm-end" id="ipm-end">
     <svg viewBox="0 0 60 32" aria-hidden="true"><use href="#ipm-inf"/></svg>
-    <h3>Train. Count. <em>Save.</em></h3>
+    <h3>Exercise. Count. <em>Save.</em></h3>
     <p>That's a whole session. Your watch recorded the movement and heart rate, you told us the reps, and it's uploaded.</p>
     <div class="row"><a href="/guides/apple/" id="ipm-guide">Read the setup guide</a><button type="button" id="ipm-again">Watch again</button></div>
   </div>
