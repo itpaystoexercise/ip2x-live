@@ -144,8 +144,19 @@ h3 { font-size: clamp(20px, 2vw, 26px); font-weight: 600; line-height: 1.25; }
 .nav-links a:hover { color: var(--white); }
 .nav .btn { padding: 11px 18px; font-size: 14px; }
 .nav-links a.cta, .nav-links a.cta:hover { color: var(--navy); } /* navy text on the light-blue CTA for readability */
+/* Log in → my.ip2x.co.uk, the testers' own site (login with a code from the app).
+   The outline button sits beside the primary CTA, and unlike the text links it
+   stays on phones: a tester on their phone is exactly who needs it. */
+.nav-links a.login { color: var(--white); }
 @media (max-width: 720px) {
   .nav-links a:not(.cta) { display: none; }
+  .nav-links a.login { display: inline-flex; }
+  .nav-links { gap: 10px; }
+}
+@media (max-width: 420px) {
+  .nav-links { gap: 8px; }
+  .nav .btn { padding: 8px 11px; font-size: 13px; }
+  .nav .btn .arrow { display: none; }
 }
 
 /* Hero */
