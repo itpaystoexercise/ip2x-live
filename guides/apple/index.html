@@ -62,20 +62,33 @@
          .guide). No reveal-on-scroll: the page is far taller than the viewport
          and must render without JS. -->
     <div class="guide">
-<div class="wrap">
-<header>
+<div class="wrap g-layout">
+<!-- Section nav: a sticky list on the left on wide screens, chips on phones
+     (owner, 22 Nov 2026, #337). Groups follow the tester's journey. -->
+<aside class="g-side">
   <nav class="toc" aria-label="Sections">
-    <a href="#movie">See it first</a>
-    <a href="#need">What you need</a>
-    <a href="#invite">Accept the invite</a>
-    <a href="#must">The two must-dos</a>
-    <a href="#onboard">First launch</a>
-    <a href="#check">Check my setup</a>
-    <a href="#train">Train &amp; count reps</a>
-    <a href="#account">Your name &amp; website</a>
-    <a href="#help">If something's off</a>
+    <div class="toc-group"><span>Get set up</span>
+      <a href="#movie">See it first</a>
+      <a href="#need">What you need</a>
+      <a href="#invite">Accept the invite</a>
+      <a href="#must">The two must-dos</a>
+      <a href="#onboard">First launch</a>
+      <a href="#check">Check my setup</a>
+    </div>
+    <div class="toc-group"><span>Train</span>
+      <a href="#train">Train &amp; count reps</a>
+      <a href="#phone">The phone question</a>
+      <a href="#routines">Routines</a>
+    </div>
+    <div class="toc-group"><span>Your account</span>
+      <a href="#account">Your name &amp; website</a>
+      <a href="#help">If something's off</a>
+    </div>
   </nav>
-  <p class="small muted guide-version">Guide v15 · 20 November 2026 · for IP2X build 6, update v0.3.44 · new: <a href="#account">your recovery code and my.ip2x.co.uk</a></p>
+</aside>
+<div class="g-main">
+<header>
+  <p class="small muted guide-version">Guide v16 · 22 November 2026 · for IP2X build 6, update v0.3.55 · new: <a href="#routines">routines</a> and <a href="#phone">the phone question</a></p>
 </header>
 
 <!-- ============ WHAT YOU NEED ============ -->
@@ -355,12 +368,12 @@
 
   <div class="figure-row">
     <ol class="g-steps">
-      <li><div><h3>Tell the app how you're wearing the watch</h3><p>Above <strong>Start session</strong>, the app asks <strong>How are you wearing the watch?</strong> Set <strong>Wrist</strong> <span class="seg"><span>Left</span><span>Right</span></span> and <strong>Crown toward</strong> <span class="seg"><span>Hand</span><span>Elbow</span></span>. It remembers your answer from last time, so usually you only check it. <a href="#orientation">How to tell</a>.</p></div></li>
-      <li><div><h3>Start on the phone, always</h3><p>Tap <strong>Start session</strong> in the app. The watch starts by itself. You don't need to touch it.</p></div></li>
-      <li><div><h3>Pick an exercise</h3><p>Tap one of the seven tiles below, or <strong>Other ›</strong> to search the full list. Tap the picture to watch a short demo.</p></div></li>
-      <li><div><h3>Start, do your set, tap Done</h3><p>Tap <strong>Start</strong>, do your set with the watch on, then tap <strong>Done</strong>.</p></div></li>
-      <li><div><h3>Enter your reps, then tap Real or Spoof</h3><p>The app asks <strong>How many reps were you able to do?</strong> Enter the true number, including 0. Your honest count is what the system learns from.</p><p>Then it asks <strong>Was this a real set, or a spoof?</strong> There's no default: tapping <strong>Real</strong> or <strong>Spoof</strong> is what saves the set. Nearly every set is <strong>Real</strong>. <a href="#realspoof">When to tap Spoof</a>.</p></div></li>
-      <li><div><h3>End the session, then leave the app open briefly</h3><p>Tap <strong>End session</strong>. Your data only syncs while the app is open, so keep it open for a few seconds afterwards. You'll see a line like <em>"Recorded 24 minutes of motion and heart rate ✓"</em>. That means your data is saved.</p></div></li>
+      <li><div><h3>Tap an exercise, or a routine</h3><p>Train is home. It says <em>Nothing is recording. Tap an exercise to begin.</em> Tap one of the seven tiles below, or <strong>Other ›</strong> to search the full list. Your <a href="#routines">routines</a> sit above the tiles.</p></div></li>
+      <li><div><h3>Answer the phone question, then tap Start</h3><p>A short sheet asks <strong>Record your phone's movement too?</strong> Nothing is picked for you, and <strong>Start</strong> stays greyed out until you answer. <a href="#phone">Which answer to pick</a>. Then tap <strong>Start</strong>. The watch starts by itself. You don't need to touch it.</p></div></li>
+      <li><div><h3>Check how you're wearing the watch</h3><p>The exercise screen has a <strong>Watch</strong> card that says how you're wearing it. If it's wrong, tap <strong>Change</strong> and set <strong>Wrist</strong> <span class="seg"><span>Left</span><span>Right</span></span> and <strong>Crown toward</strong> <span class="seg"><span>Hand</span><span>Elbow</span></span>. It remembers your answer, so usually you only check it. <a href="#orientation">How to tell</a>. Tap <strong>Watch demo ▶</strong> to see the exercise.</p></div></li>
+      <li><div><h3>Start, do your set, tap Done</h3><p>The screen says <em>Start when you are in position. Tap Done after your last rep.</em> Tap <strong>Start</strong>, do your set with the watch on, then tap <strong>Done</strong>.</p></div></li>
+      <li><div><h3>Enter your reps, then Real set or Spoof</h3><p>The app asks <strong>How many reps did you manage?</strong> Enter the true number, including 0. Your honest count is what the system learns from.</p><p>Then it asks <strong>Was this a real set?</strong> Nothing is chosen for you: tap <strong>Real set</strong> or <strong>Spoof</strong>, then <strong>Save set</strong>. Nearly every set is a real set. <a href="#realspoof">When to tap Spoof</a>.</p></div></li>
+      <li><div><h3>End the session, then leave the app open briefly</h3><p>Tap your next exercise, or follow your routine's <strong>Next</strong>. When you've finished, tap <strong>End</strong> on the recording bar, then <strong>End session, save it</strong>. Your data only syncs while the app is open, so keep it open for a few seconds afterwards. You'll see a line like <em>"Recorded 24 minutes of motion and heart rate ✓"</em>. That means your data is saved.</p></div></li>
     </ol>
     <figure>
       <svg class="mock-watch" viewBox="0 0 190 250" role="img" aria-label="Illustration of the watch face when no session is running: IP2X, idle, waiting for phone, Start a session in the IP2X app on your phone">
@@ -435,7 +448,7 @@
       </div>
       <div class="orient-case">
         <p><strong>Wrist</strong> is simply the arm the watch is on: <strong>Left</strong> or <strong>Right</strong>.</p>
-        <p><strong>Swapped mid-session?</strong> The exercise screen has the same two settings under <strong>How you're wearing the watch</strong>. Change them there; the change applies from that exercise on, and next session starts from it.</p>
+        <p><strong>Swapped mid-session?</strong> On the exercise screen, tap <strong>Change</strong> on the <strong>Watch</strong> card. The change applies from that exercise on, and next session starts from it.</p>
       </div>
     </div>
   </div>
@@ -448,7 +461,7 @@
     </div>
     <div class="rs-pair">
       <div class="rs-card real">
-        <b class="tag">Real</b>
+        <b class="tag">Real set</b>
         <p>You did the exercise you picked, properly, and the rep count is true. <strong>This is almost every set.</strong></p>
       </div>
       <div class="rs-card spoof">
@@ -461,7 +474,7 @@
         </ul>
       </div>
     </div>
-    <p class="small muted">Spoof whenever you like, but always label it Spoof. A faked set saved as Real teaches the system the wrong thing.</p>
+    <p class="small muted">Spoof whenever you like, but always label it Spoof. A faked set saved as a real set teaches the system the wrong thing.</p>
     <div class="note">
       <b>Made a mistake?</b>
       <span>Tapped the wrong button, or entered a rep count that's clearly wrong? Get in touch with us and tell us roughly when the set was. We'll decide what to do with it. A count that's off by one is fine, no need to tell us.</span>
@@ -529,6 +542,61 @@
   </div>
 </section>
 
+<!-- ============ THE PHONE QUESTION (#300, #306) ============ -->
+<section id="phone">
+  <header>
+    <div class="g-eyebrow">Every session</div>
+    <h2>The phone question</h2>
+    <p>Every session starts with <strong>Record your phone's movement too?</strong> With the phone in your pocket, IP2X records how it moves, as a second sensor for your legs and hips. Your watch records as usual either way.</p>
+  </header>
+  <p>Nothing is picked for you, because where your phone is can change from one session to the next. Pick the answer that is true for this session:</p>
+  <div class="needs">
+    <div class="need"><h3>Yes, left thigh pocket<br>Yes, right thigh pocket</h3><p>The phone is in a trouser or shorts pocket on that thigh.</p></div>
+    <div class="need"><h3>Yes, on my waistband</h3><p>The phone is clipped or tucked at your waist.</p></div>
+    <div class="need"><h3>No, not this time</h3><p>The phone is on a bench, in a bag, or in your hand. That's a full answer, and the watch still records.</p></div>
+  </div>
+  <p>The first time you say Yes, the app explains what it records, then iOS asks to use <strong>Motion &amp; Fitness</strong>. Allow it. Phone motion is recorded only during a session. Keep the screen facing out, top pointing up.</p>
+  <p class="small muted">If you turned Motion &amp; Fitness off, the sheet says so and offers <strong>Turn it on in You</strong>. You can still answer <strong>No, not this time</strong> and train.</p>
+</section>
+
+<!-- ============ ROUTINES (#306, #308) ============ -->
+<section id="routines">
+  <header>
+    <div class="g-eyebrow">New in update v0.3.55</div>
+    <h2>Routines: plan a session, then follow it</h2>
+    <p>A routine is the list of exercises you want to do, in order, like <strong>Monday legs: Squats, Lunges, Glute bridge</strong>. It doesn't hold sets, reps or weights; you decide those on the day. An exercise can be in a routine more than once. A routine holds up to 20 exercises, and you can keep 50 routines.</p>
+  </header>
+
+  <h3>Make one on my.ip2x.co.uk</h3>
+  <ol class="g-steps">
+    <li><div><h3>Open Routines</h3><p>Log in to <strong>my.ip2x.co.uk</strong> (<a href="#account">how</a>). At the top, tap <strong>Routines</strong>, then <strong>New routine</strong>.</p></div></li>
+    <li><div><h3>Add exercises</h3><p>Search or pick exercises to add them. Use the arrows to move one up or down, and × to take one out.</p></div></li>
+    <li><div><h3>Name it and save</h3><p>Type a name, like <strong>Monday legs</strong>, and tap <strong>Save routine</strong>.</p></div></li>
+  </ol>
+  <p class="small muted">To change a routine, tap it on the Routines page. To delete one, open it, tap <strong>Delete</strong>, then <strong>Tap again to delete</strong>. When you have 50, <strong>New routine</strong> is greyed out until you delete one.</p>
+
+  <h3>Start it from the app</h3>
+  <p>Your routines appear on <strong>Train</strong>, above the exercise tiles, the one you used most recently first. Tap one: the start sheet shows its name and exercises. Answer the phone question and tap <strong>Start</strong>. A routine you make or change on the website shows up the next time you open Train with an internet connection. With no routines yet, Train says <em>Plan routines at my.ip2x.co.uk, or save one after a session.</em></p>
+
+  <h3>During the session</h3>
+  <p>After you save each set, a card shows where you are, like <strong>2 of 3 · Monday legs</strong>, and what comes next.</p>
+  <div class="needs two">
+    <div class="need"><h3>Next: Lunges</h3><p>Opens the next exercise. Nothing records until you tap <strong>Start</strong>.</p></div>
+    <div class="need"><h3>Skip</h3><p>Moves past the next exercise without doing it.</p></div>
+    <div class="need"><h3>Change exercise</h3><p>Do something else in its place. The list opens with <em>Instead of Lunges, pick any exercise</em>. Pick one, or tap <strong>Back to routine</strong>.</p></div>
+    <div class="need"><h3>‹ Train</h3><p>For an extra exercise. The routine waits, and a strip on Train, like <em>Monday legs · Next: Glute bridge ›</em>, takes you back.</p></div>
+  </div>
+  <p class="small muted">Tap the <strong>2 of 3</strong> line to see the whole routine: done, skipped, and still to do. After the last exercise the card shows <strong>End session</strong>. There's no button for another set of the same exercise right away; to repeat one, use <strong>Change exercise</strong> or put it in the routine twice.</p>
+
+  <h3>After the session</h3>
+  <div class="needs">
+    <div class="need"><h3>You trained without a routine</h3><p><strong>Save this as a routine?</strong> Type a name and tap <strong>Save</strong>, or <strong>Not now</strong>. The exercises are kept in the order you did them; several sets of one exercise in a row count once.</p></div>
+    <div class="need"><h3>You followed a routine exactly</h3><p>Nothing to answer.</p></div>
+    <div class="need"><h3>You changed a routine</h3><p>The app says <em>You changed Monday legs.</em> Tap <strong>Update Monday legs</strong>, <strong>Save as a new routine</strong>, or <strong>Not now</strong>.</p></div>
+  </div>
+  <p class="small muted">The app can save and update routines, but renaming, reordering and deleting happen on the website. No signal at the gym? Train still shows the routines your phone last saw, and a routine saved without a connection is sent when you're back online.</p>
+</section>
+
 <!-- ============ HELP ============ -->
 <section id="account">
   <header>
@@ -574,6 +642,7 @@
     <li><div><h3>Sign out when you're done</h3><p>You stay logged in for 8 hours. On a shared computer, sign out on the website. Left yourself logged in somewhere? In the app, tap <strong>Sign out of the website everywhere</strong>.</p></div></li>
   </ol>
   <p class="small muted">Only type a login code on my.ip2x.co.uk, and only one you just got from your own app. We'll never ask you for one.</p>
+  <p>The website is also where you <a href="#routines">plan your routines</a>.</p>
 
   <h3>Deleting your data</h3>
   <p>You can ask us to delete everything we hold about you at any time: sessions, heart-rate and motion readings, your health answers and your name. Log in to my.ip2x.co.uk, open your account and ask us to delete your data. A person on the team handles it by hand, within a month, as UK data protection law requires. Backup copies delete themselves within 14 days after that. Once your data is gone your name goes too, so you won't be able to log in afterwards.</p>
@@ -634,9 +703,10 @@
 </section>
 
 <footer>
-  <span>IP2X tester guide · updated 14 October 2026</span>
+  <span>IP2X tester guide · updated 22 November 2026</span>
   <span>Phone and watch drawings are illustrations made from the app's own on-screen text. Exercise images are stills from our own illustrated demo clips.</span>
 </footer>
+</div>
 </div>
     </div>
   </div>
@@ -668,6 +738,23 @@
   </div>
 </footer>
 
+<script>
+  // Marks the side-nav link for the section in view. Without JS the nav still works.
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = Array.prototype.slice.call(document.querySelectorAll('.g-side a[href^="#"]'));
+    var byId = {};
+    links.forEach(function (a) { var el = document.getElementById(a.getAttribute('href').slice(1)); if (el) byId[el.id] = a; });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (l) { l.removeAttribute('aria-current'); });
+        byId[e.target.id].setAttribute('aria-current', 'location');
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    Object.keys(byId).forEach(function (id) { io.observe(document.getElementById(id)); });
+  })();
+</script>
 <script src="../../assets/movie/ipm.js" defer></script>
 <script src="../../assets/js/main.js" defer></script>
 </body>
