@@ -35,12 +35,15 @@
     padding-inline: 16px;
     padding-block: 0 64px;
   }
-  .wrap { max-width: 760px; margin: 0 auto; }
+  /* Full width of the site container (owner, 22 Nov: "a huge left and right
+     margin"). Prose keeps a readable line length via p { max-width } below;
+     cards and steps use the width. */
+  .wrap { max-width: none; margin: 0 auto; }
   h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0; }
   h1 { font-size: clamp(2rem, 6vw, 2.9rem); font-weight: 800; letter-spacing: -0.02em; }
   h2 { font-size: 1.6rem; font-weight: 800; letter-spacing: -0.01em; }
   h3 { font-size: 1.12rem; font-weight: 600; }
-  p { margin: 0; max-width: 64ch; }
+  p { margin: 0; max-width: 72ch; }
   a { color: var(--ink); text-underline-offset: 3px; }
   a:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: 4px; }
   strong { font-weight: 700; }
@@ -206,8 +209,8 @@
   .needs.two { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
   @media (min-width: 1100px) {
     .wrap.g-layout {
-      max-width: 1020px; display: grid; grid-template-columns: 210px minmax(0, 1fr);
-      gap: 48px; align-items: start;
+      max-width: none; display: grid; grid-template-columns: 230px minmax(0, 1fr);
+      gap: 56px; align-items: start;
     }
     .g-side { position: sticky; top: 88px; max-height: calc(100vh - 104px); overflow-y: auto; padding-block: 40px 16px; }
     .g-side nav.toc { gap: 20px; }
