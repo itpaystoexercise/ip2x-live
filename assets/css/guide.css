@@ -227,3 +227,11 @@
    reading with a side nav, so on this page alone the container, header
    included, may grow to 1600px. Paragraphs keep their 72ch line length. */
 body.page-guide { --max: 1600px; }
+
+/* The TestFlight QR (owner, 22 Nov): encodes the public link directly. If the
+   public link is ever reset, regenerate assets/img/testflight-qr.svg (#346). */
+.guide .join-qr { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center;
+  background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+.guide .join-qr img { display: block; width: 148px; height: 148px; max-width: 100%; }
+.guide .join-qr h3 { margin-bottom: 4px; }
+@media (max-width: 520px) { .guide .join-qr { grid-template-columns: 1fr; justify-items: start; } }
