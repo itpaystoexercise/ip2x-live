@@ -221,3 +221,9 @@
     .g-side nav.toc a[aria-current] { background: var(--blue); font-weight: 700; }
   }
 }
+
+/* Wide screens (owner, 22 Nov: "still has a huge left and right space"): the
+   site caps every page at --max (1200px). The setup guide is long reference
+   reading with a side nav, so on this page alone the container, header
+   included, may grow to 1600px. Paragraphs keep their 72ch line length. */
+body.page-guide { --max: 1600px; }
