@@ -264,3 +264,15 @@
 @media (prefers-reduced-motion: reduce) {
   .ipm *, .ipm *::before, .ipm *::after { transition-duration: 0s !important; animation: none !important; }
 }
+
+/* v0.3.55 additions: the welcome's "What happens next", the routine row on
+   Train (#306) and the start sheet with the phone question. */
+.nextbox { padding: 10px 12px; font-size: 13px; line-height: 19px; color: var(--a-text); }
+.rrow { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.rrow .rc { border-radius: 12px; background: var(--a-wash); padding: 8px 12px; display: flex; flex-direction: column; }
+.rrow .rc b { font-size: 14px; color: var(--a-ink); }
+.rrow .rc span { font-size: 12px; color: var(--a-text); }
+.s-train .a-tile { height: 52px; }
+.ssheet { gap: 8px; }
+.ssheet .a-opt { height: 40px; font-size: 14px; }
+.ssheet .a-btn { margin-top: 4px; }

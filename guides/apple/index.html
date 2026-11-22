@@ -88,7 +88,7 @@
 </aside>
 <div class="g-main">
 <header>
-  <p class="small muted guide-version">Guide v16 · 22 November 2026 · for IP2X build 6, update v0.3.55 · new: <a href="#routines">routines</a> and <a href="#phone">the phone question</a></p>
+  <p class="small muted guide-version">Guide v17 · 22 November 2026 · for IP2X build 6, update v0.3.55 · new: <a href="#onboard">first launch, step by step</a>, <a href="#routines">routines</a> and <a href="#phone">the phone question</a></p>
 </header>
 
 <!-- ============ WHAT YOU NEED ============ -->
@@ -240,35 +240,33 @@
 
   <div class="figure-row">
     <ol class="g-steps">
-      <li><div><h3>Tell us your name</h3><p>The first screen says <strong>Welcome to IP2X</strong> and asks <strong>What's your name?</strong> Your name is how we label your data, and nothing else.</p><p class="small muted"><strong>Your name is tied to this phone.</strong> Once it's set, the app won't let you change it, so your history stays yours. If you ever reinstall, type exactly the same name. If the app says the name is already in use, enter your <a href="#account">recovery code</a>.</p></div></li>
-      <li><div><h3>Tap <em>Let's get set up</em></h3><p>The screen tells you what happens next: <em>your phone asks for health access, we ask a few questions about you, we find your recent data and upload it, we check your setup.</em></p></div></li>
-      <li><div><h3>Allow health access</h3><p>iOS shows the Health permission sheet. Turn on everything it asks for and tap <strong>Allow</strong>. The sheet now lists date of birth, sex, height and weight as well: the app reads them so some of the next answers are filled in for you.</p><p class="small muted"><strong>On a brand-new install the sheet can appear before you've typed your name.</strong> Allow it, then type your name and carry on. It won't ask twice.</p></div></li>
-      <li><div><h3 id="answers">Answer a few questions about you</h3><p>Eight questions, one per screen: when you were born (month and year), your sex at birth, your height, your weight, which wrist wears the watch, your dominant hand, how often you train, and whether you take medication that affects your heart rate. The first screen says why: <em>they help us read your heart rate fairly and map your watch's movement</em>. Tap <strong>I agree, continue</strong>.</p><p>Scroll each wheel to your answer and tap <strong>Next</strong>; on the last one, tap <strong>Save</strong>. Every question needs an answer, and <em>Prefer not to say</em> counts as one. Height and weight start in feet and stones; tap the toggle for cm and kg. Anything Health already knew is filled in for you, so just check it. Your age sets your heart-rate limit unless you've set one yourself in Settings.</p></div></li>
-      <li><div><h3>Open IP2X on your watch and allow both prompts</h3><p>The watch asks for permission twice, at different times. It asks for <strong>Health</strong> the first time you open the watch app. It asks for <strong>Motion &amp; Fitness</strong> the first time it records motion, which is your first set or the setup check. Allow both on your wrist. <strong>Until both are allowed, sessions won't record.</strong></p></div></li>
+      <li><div><h3>Tell us your name</h3><p>The first screen says <strong>Welcome to IP2X</strong> and asks <strong>What's your name?</strong> Your name is how we label your data, and nothing else. As you type, the app checks it: <em>✓ That name is free.</em></p><p class="small muted"><strong>Your name is tied to this phone.</strong> Once it's set, the app won't let you change it, so your history stays yours. If you ever reinstall, type exactly the same name. If the app says <em>That name is already in use</em>, enter your <a href="#account">recovery code</a> and tap <strong>Use my recovery code</strong>.</p></div></li>
+      <li><div><h3>Tap <em>Let's get set up</em>, then save your recovery code</h3><p>The screen tells you what happens next: <em>we bring in your recent health data, we ask a few questions about you, we set up your watch.</em> A new name then gets a <strong>Save your recovery code</strong> screen. Tap <strong>Save this code</strong>, keep it somewhere safe, then tap <strong>I've saved it</strong>.</p></div></li>
+      <li><div><h3>Allow Health access</h3><p><strong>Let's gather your health data</strong> explains that IP2X brings in your last 60 days from Health, which takes a minute or two. Tap <strong>Allow Health access</strong>. In the iOS sheet, turn on everything, <strong>including Workouts</strong>, and tap <strong>Allow</strong>. IP2X saves your sessions to Health as workouts, and reads your date of birth, sex, height and weight so some answers are filled in for you.</p><p class="small muted">Keep IP2X open while your data loads. A thin bar at the top of the next screens shows how far it has got.</p></div></li>
+      <li><div><h3 id="answers">Answer a few questions about you</h3><p>Eight questions, one per screen: when you were born (month and year), your sex at birth, your height, your weight, which wrist wears the watch, your dominant hand, how often you train, and whether you take medication that affects your heart rate. The first screen says why: <em>they help us read your heart rate fairly and map your watch's movement</em>. Tap <strong>I agree, continue</strong>.</p><p>Scroll each wheel to your answer and tap <strong>Next</strong>; on the last one, tap <strong>Save</strong>. Every question needs an answer, and <em>Prefer not to say</em> counts as one. Height and weight start in feet and stones; tap the toggle for cm and kg. Anything Health already knew is filled in for you, so just check it. Your age sets your heart-rate limit unless you've set one yourself in Settings.</p><p class="small muted">If you finish before your data has loaded, the app shows <strong>Finishing up</strong> for a moment. After a couple of minutes you can tap <strong>Continue, we'll finish in the background</strong>.</p></div></li>
+      <li><div><h3>Set up your watch</h3><p><strong>Let's set up your watch</strong> asks you to open IP2X on the watch. It asks you to review its Health permissions: turn everything on, <strong>including Workouts</strong>. Then tap <strong>Run the setup check</strong> on the phone, with the watch on. During the check the watch asks for <strong>Motion &amp; Fitness</strong>: allow it. <a href="#check">What the check tests</a>.</p><p class="small muted"><strong>IP2X may close when you allow Motion.</strong> That's iOS, and the screen warns you first. Open IP2X again: it says <strong>Welcome back</strong>. Tap <strong>Run the setup check again</strong>.</p></div></li>
+      <li><div><h3>Fix anything the check flags</h3><p>Setup finishes only when nothing needs fixing. If a row fails, the app shows <strong>Let's fix this before you finish</strong> with what to do for each one, such as <strong>Allow Health access</strong> or <strong>Open the Health app</strong>. Do it, then tap <strong>Run the setup check again</strong>. A permission can't be skipped. If only the connection failed, you can tap <strong>Continue anyway</strong>.</p></div></li>
+      <li><div><h3>Your phone as a second sensor</h3><p>The last screen, <strong>Use your phone as a second sensor</strong>, explains phone motion. Tap <strong>Turn on phone motion</strong> and allow <strong>Motion &amp; Fitness</strong> when iOS asks, or tap <strong>Not now</strong>. Either way, every session asks whether your phone is with you: <a href="#phone">the phone question</a>.</p></div></li>
     </ol>
     <figure>
-      <svg class="mock" viewBox="0 0 230 440" role="img" aria-label="Illustration of the IP2X welcome screen: Welcome to IP2X, a name field, What happens next, and a Let's get set up button">
+      <svg class="mock" viewBox="0 0 230 440" role="img" aria-label="Illustration of the IP2X welcome screen: Welcome to IP2X, a name field showing the name is free, What happens next in three steps, and a Let's get set up button">
         <rect x="1" y="1" width="228" height="438" rx="34" fill="#fff" stroke="#050a30" stroke-width="2"/>
         <rect x="84" y="14" width="62" height="16" rx="8" fill="#050a30"/>
         <image href="../../assets/img/guides/apple/screen-1.png" x="75" y="42" width="80" height="45"/>
         <text x="115" y="108" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="800" font-size="17" fill="#050a30">Welcome to IP2X</text>
-        <text x="115" y="126" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9" fill="#454b6b">Collects health and workout data from</text>
-        <text x="115" y="138" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9" fill="#454b6b">your phone and watch for analysis.</text>
+        <text x="115" y="126" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9" fill="#454b6b">IP2X collects health and workout data from your</text>
+        <text x="115" y="138" text-anchor="middle" font-family="Figtree, sans-serif" font-size="9" fill="#454b6b">phone and watch and uploads it for analysis.</text>
         <text x="20" y="164" font-family="Figtree, sans-serif" font-weight="700" font-size="11" fill="#050a30">What's your name?</text>
         <rect x="18" y="172" width="194" height="30" rx="8" fill="#fff" stroke="#dde3ef" stroke-width="1.5"/>
         <text x="28" y="191" font-family="Figtree, sans-serif" font-size="11" fill="#050a30">sam</text>
-        <text x="20" y="216" font-family="Figtree, sans-serif" font-size="8.5" fill="#454b6b">We label your data with it — nothing else.</text>
+        <text x="20" y="216" font-family="Figtree, sans-serif" font-size="8.5" fill="#17784a">✓ That name is free.</text>
         <rect x="18" y="228" width="194" height="92" rx="12" fill="#bfe4f9"/>
         <text x="30" y="246" font-family="Figtree, sans-serif" font-weight="700" font-size="10.5" fill="#050a30">What happens next</text>
-        <text x="30" y="262" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">1. Your phone asks for health access.</text>
-        <text x="30" y="276" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">2. We ask a few questions about you.</text>
-        <text x="30" y="290" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">3. We find your recent data and upload it.</text>
-        <text x="30" y="304" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">4. We check your setup.</text>
+        <text x="30" y="264" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">1. We bring in your recent health data.</text>
+        <text x="30" y="280" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">2. We ask a few questions about you.</text>
+        <text x="30" y="296" font-family="Figtree, sans-serif" font-size="9" fill="#050a30">3. We set up your watch.</text>
         <rect x="18" y="330" width="194" height="34" rx="10" fill="#050a30"/>
         <text x="115" y="352" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="700" font-size="12" fill="#fff">Let's get set up</text>
-        <rect x="18" y="372" width="194" height="42" rx="10" fill="#ffd1ea"/>
-        <text x="30" y="389" font-family="Figtree, sans-serif" font-weight="700" font-size="10" fill="#050a30">Have a watch?</text>
-        <text x="30" y="404" font-family="Figtree, sans-serif" font-size="8.5" fill="#050a30">Open IP2X on the watch and grant both…</text>
         <rect x="80" y="422" width="70" height="4" rx="2" fill="#050a30"/>
       </svg>
       <figcaption>Illustration of the welcome screen, drawn from the app's own text.</figcaption>
@@ -283,7 +281,7 @@
     <b>If the app restarts after you change a permission, that's iOS, not a crash.</b>
     <span>iOS restarts an app when you change one of its permissions in Settings. Open IP2X again and carry on. Nothing is lost.</span>
   </div>
-  <p class="small muted">After the setup check, the app shows a short three-card guide and offers a <strong>Practice</strong> session. Practice runs the whole flow (watch, timer, reps, upload) but never counts. It's a good way to try things out.</p>
+  <p class="small muted">After setup, the app shows a short three-card guide and offers a <strong>Practice</strong> session. Practice runs the whole flow (watch, timer, reps, upload) but never counts. It's a good way to try things out.</p>
 </section>
 
 <!-- ============ SETUP CHECK ============ -->
@@ -292,7 +290,7 @@
     <div class="g-eyebrow">Step three</div>
     <h2>Check my setup</h2>
   </header>
-  <p><strong>Check my setup</strong> runs automatically during onboarding. It's also on the Session screen whenever you want it. It takes about half a minute: it tests the phone's upload, then runs a short session on the watch. <strong>Wear the watch while it runs.</strong> If the watch asks for Motion &amp; Fitness during the check, tap <strong>Allow</strong> on your wrist.</p>
+  <p><strong>Check my setup</strong> runs during setup, and setup only finishes once no row needs fixing. Afterwards it's on <strong>Train</strong> when nothing is recording, and in <strong>You</strong>. It takes about half a minute: it tests the phone's upload, then runs a short session on the watch. <strong>Wear the watch while it runs.</strong> If the watch asks for Motion &amp; Fitness during the check, tap <strong>Allow</strong> on your wrist.</p>
 
   <div class="figure-row">
     <div style="display:grid; gap:14px">
@@ -306,7 +304,7 @@
       <p class="small muted">A <strong>?</strong> is not a failure. Some things, like whether you granted Health access, iOS never tells an app directly. The check only says ✓ once it has actually seen the data arrive.</p>
     </div>
     <figure>
-      <svg class="mock" viewBox="0 0 230 440" role="img" aria-label="Illustration of the setup check result: Ready to record, with six ticked rows">
+      <svg class="mock" viewBox="0 0 230 440" role="img" aria-label="Illustration of the setup check result: Ready to record, with eight ticked rows">
         <rect x="1" y="1" width="228" height="438" rx="34" fill="#fff" stroke="#050a30" stroke-width="2"/>
         <rect x="84" y="14" width="62" height="16" rx="8" fill="#050a30"/>
         <text x="20" y="64" font-family="Figtree, sans-serif" font-weight="800" font-size="16" fill="#050a30">Check my setup</text>
@@ -314,14 +312,16 @@
         <text x="30" y="95" font-family="Figtree, sans-serif" font-weight="700" font-size="11" fill="#17784a">Ready to record</text>
         <text x="30" y="111" font-family="Figtree, sans-serif" font-size="8.5" fill="#050a30">Everything that applies to your setup is working.</text>
         <g font-family="Figtree, sans-serif" font-size="9.5" fill="#050a30">
-          <text x="24" y="148" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="147">Phone can reach the server</text>
-          <text x="24" y="178" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="177">Phone is collecting health data</text>
-          <text x="24" y="208" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="207">Watch is paired with the app installed</text>
-          <text x="24" y="238" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="237">Watch answered the phone</text>
-          <text x="24" y="268" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="267">Motion &amp; Fitness granted on the watch</text>
-          <text x="24" y="298" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="297">Motion data reaches the phone</text>
+          <text x="24" y="147" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="146">Phone can reach the server</text>
+          <text x="24" y="172" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="171">Phone is collecting health data</text>
+          <text x="24" y="197" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="196">Workouts can be saved to Health</text>
+          <text x="24" y="222" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="221">Watch is paired with the app installed</text>
+          <text x="24" y="247" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="246">Watch answered the phone</text>
+          <text x="24" y="272" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="271">Motion &amp; Fitness granted on the watch</text>
+          <text x="24" y="297" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="296">Motion data reaches the phone</text>
+          <text x="24" y="322" font-weight="800" font-size="12" fill="#17784a">✓</text><text x="42" y="321">Motion data reaches the server</text>
         </g>
-        <g stroke="#dde3ef"><line x1="18" y1="158" x2="212" y2="158"/><line x1="18" y1="188" x2="212" y2="188"/><line x1="18" y1="218" x2="212" y2="218"/><line x1="18" y1="248" x2="212" y2="248"/><line x1="18" y1="278" x2="212" y2="278"/></g>
+        <g stroke="#dde3ef"><line x1="18" y1="155" x2="212" y2="155"/><line x1="18" y1="180" x2="212" y2="180"/><line x1="18" y1="205" x2="212" y2="205"/><line x1="18" y1="230" x2="212" y2="230"/><line x1="18" y1="255" x2="212" y2="255"/><line x1="18" y1="280" x2="212" y2="280"/><line x1="18" y1="305" x2="212" y2="305"/></g>
         <rect x="18" y="340" width="194" height="34" rx="10" fill="#050a30"/>
         <text x="115" y="362" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="700" font-size="11.5" fill="#fff">Run again</text>
         <text x="115" y="396" text-anchor="middle" font-family="Figtree, sans-serif" font-weight="600" font-size="11" fill="#050a30">Close</text>
@@ -345,10 +345,12 @@
       <tbody>
         <tr><td>Phone can reach the server</td><td>Your phone is online and uploads are getting through.</td><td>Check Wi-Fi or mobile data. If the server was asleep, run it again in a minute.</td></tr>
         <tr><td>Phone is collecting health data</td><td>Health records are actually arriving on the phone.</td><td>Often a <strong>?</strong> on a fresh install. If it keeps saying nothing arrived, check <strong>Health → Sharing → IP2X</strong>.</td></tr>
+        <tr><td>Workouts can be saved to Health</td><td>IP2X is allowed to save your sessions to Health as workouts, on the phone and on the watch.</td><td>Allow Health access for IP2X and turn everything on, including <strong>Workouts</strong>. On the watch, open IP2X, review the Health permissions and turn on Workouts. Then run it again.</td></tr>
         <tr><td>Watch is paired with the app installed</td><td>Your iPhone can see a watch with IP2X on it.</td><td>Install IP2X on the watch from the <strong>Watch</strong> app on your iPhone.</td></tr>
         <tr><td>Watch answered the phone</td><td>The watch started a short session when the phone asked. That also proves the watch's Health permission is granted.</td><td>Open IP2X on the watch and allow the Health permission sheet.</td></tr>
         <tr><td>Motion &amp; Fitness granted on the watch</td><td>The watch is allowed to record your wrist motion.</td><td>"Not asked yet" is normal the first time. Allow it on the wrist when asked. If it was refused: on the watch, <strong>Settings → Privacy &amp; Security → Motion &amp; Fitness → IP2X</strong>.</td></tr>
         <tr><td>Motion data reaches the phone</td><td>Wrist motion from the watch made it across to your phone.</td><td>Keep the phone and watch close and run it again. If it still fails, restart the watch and try once more, then tell us.</td></tr>
+        <tr><td>Motion data reaches the server</td><td>The motion recorded during the check uploaded from your phone to our server.</td><td>Check the phone's internet connection, then run it again.</td></tr>
       </tbody>
     </table>
   </div>

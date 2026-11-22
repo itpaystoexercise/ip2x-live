@@ -29,18 +29,18 @@ var MARKUP = `
             <div class="col" style="gap:6px">
               <div class="lbl">What's your name?</div>
               <div class="a-input"><span id="t-name"></span><span class="caret"></span></div>
-              <div class="a-free" id="t-free">✓ free</div>
+              <div class="a-free" id="t-free">✓ That name is free.</div>
             </div>
+            <div class="a-card nextbox"><b>What happens next</b><br>1. We bring in your recent health data.<br>2. We ask a few questions about you.<br>3. We set up your watch.</div>
             <div class="grow"></div>
             <div class="a-btn dis" id="t-setup">Let's get set up</div>
-            <div class="a-link" style="font-size:13px">Have a code from your old phone?</div>
           </div>
 
           <!-- 3 health -->
           <div class="ipm-scr s-health" data-s="health">
             <div class="sheet">
               <h4>Health Access</h4>
-              <p>IP2X would like to read data from Health</p>
+              <p>IP2X would like to access and update your Health data</p>
               <div class="turn" id="t-allon">Turn On All</div>
               <ul>
                 <li>Heart Rate <span class="tog"></span></li>
@@ -80,10 +80,11 @@ var MARKUP = `
             <h2 class="a-h">Check my setup</h2>
             <p class="a-cap">Hi sam. Checking the phone and the watch…</p>
             <div>
-              <div class="chk"><b>✓</b><div>Health permissions granted<small>Granted.</small></div></div>
-              <div class="chk"><b>✓</b><div>Watch paired, app installed<small>A watch is paired and the app is installed.</small></div></div>
+              <div class="chk"><b>✓</b><div>Phone can reach the server</div></div>
+              <div class="chk"><b>✓</b><div>Workouts can be saved to Health<small>Allowed on the phone and the watch.</small></div></div>
+              <div class="chk"><b>✓</b><div>Watch answered the phone</div></div>
               <div class="chk"><b>✓</b><div>Motion &amp; Fitness granted on the watch</div></div>
-              <div class="chk"><b>✓</b><div>Phone can reach the server<small>Online. Nothing has needed uploading yet.</small></div></div>
+              <div class="chk"><b>✓</b><div>Motion data reaches the server</div></div>
             </div>
             <div class="verdict" id="t-verdict">Ready to record<small>Everything that applies to your setup is working.</small></div>
             <div class="grow"></div>
@@ -101,6 +102,7 @@ var MARKUP = `
                 <div class="greet"><h2 class="a-title">Hi sam</h2><p class="a-cap" style="font-size:15px">Nothing is recording. Tap an exercise to begin.</p></div>
                 <div class="live" style="top:6px;bottom:auto"><span class="rd"></span><span class="t" id="t-livet">Recording · 00:00</span><span class="n" id="t-sets">1 set</span><span class="end" id="t-end">End</span></div>
               </div>
+              <div class="rrow"><div class="rc"><b>Monday legs</b><span>Squats, Lunges +1</span></div><div class="rc"><b>Upper body</b><span>Push-ups, Rows +2</span></div></div>
               <div class="tiles">
                 <div class="a-tile">Chest</div><div class="a-tile">Back</div>
                 <div class="a-tile">Legs</div><div class="a-tile" id="t-biceps">Biceps<span class="bdg" id="t-bdg">×1</span></div>
@@ -114,6 +116,18 @@ var MARKUP = `
               <div class="on" id="tab-train"><svg viewBox="0 0 24 24"><path d="M3 10v4M6 7v10M18 7v10M21 10v4M6 12h12"/></svg>Train</div>
               <div id="tab-act"><svg viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg>Activity</div>
               <div><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.5-6 8-6s7 2 8 6"/></svg>You</div>
+            </div>
+            <div class="ovl" id="t-sheet">
+              <div class="rsheet ssheet">
+                <h2 class="a-h" style="font-size:20px">Start your session</h2>
+                <div class="lbl">Record your phone's movement too?</div>
+                <p class="a-cap">With the phone in your pocket, IP2X records how it moves, as a second sensor for your legs and hips.</p>
+                <div class="a-opt">Yes, left thigh pocket</div>
+                <div class="a-opt" id="t-thigh">Yes, right thigh pocket</div>
+                <div class="a-opt">Yes, on my waistband</div>
+                <div class="a-opt">No, not this time</div>
+                <div class="a-btn dis" id="t-go">Start</div>
+              </div>
             </div>
             <div class="ovl mid" id="t-dlg">
               <div class="dlg">
@@ -326,6 +340,7 @@ var MARKUP = `
     root.querySelectorAll('.chk').forEach(function (x) { x.classList.remove('on'); });
     $('t-verdict').classList.remove('on');
     $('t-train').classList.remove('rec'); $('t-bdg').classList.remove('on'); $('t-dlg').classList.remove('on');
+    $('t-sheet').classList.remove('on'); $('t-go').classList.add('dis');
     $('tab-train').classList.add('on'); $('tab-act').classList.remove('on');
     $('t-ex').classList.remove('running'); pep(false);
     $('t-reps').classList.remove('on'); $('t-real').classList.remove('sel'); $('t-save').classList.add('dis');
@@ -348,7 +363,7 @@ var MARKUP = `
       await wait(400, t); $('t-free').classList.add('on'); $('t-setup').classList.remove('dis');
       await wait(700, t); await press($('t-setup'), t); hideTap(); await wait(300, t);
     } },
-    { id: 'health', chip: 'Health', h: 'Allow Health access', p: 'Turn everything on. IP2X reads your heart rate and workouts from Health; it never writes to it.', run: async function (t) {
+    { id: 'health', chip: 'Health', h: 'Allow Health access', p: 'Turn everything on, including Workouts. IP2X brings in your last 60 days and saves your IP2X workouts to Health.', run: async function (t) {
       show('health'); await wait(900, t);
       await press($('t-allon'), t, 100);
       var tg = root.querySelectorAll('.tog');
@@ -368,16 +383,19 @@ var MARKUP = `
       hideTap(); await wait(600, t);
       await press($('t-34'), t, 50); $('t-34').classList.add('sel'); d[7].classList.add('on'); await wait(700, t); hideTap();
     } },
-    { id: 'check', chip: 'Setup', h: 'Check my setup', p: 'One look at the phone, the watch and the connection. Green across the board means you are ready to record.', run: async function (t) {
+    { id: 'check', chip: 'Watch', h: 'Set up your watch', p: 'Allow Health and Motion on the watch, then the setup check runs. You finish once nothing needs fixing.', run: async function (t) {
       show('check'); watch('ready'); await wait(700, t);
       var c = root.querySelectorAll('.chk');
       for (var i = 0; i < c.length; i++) { c[i].classList.add('on'); await wait(520, t); }
       $('t-verdict').classList.add('on'); await wait(1200, t);
       await press($('t-cont'), t); hideTap();
     } },
-    { id: 'pick', chip: 'Pick', h: 'Tap an exercise to begin', p: 'Train is home. There is no start button: your first exercise starts the session.', run: async function (t) {
-      show('train'); watch('ready'); await wait(1800, t);
+    { id: 'pick', chip: 'Pick', h: 'Tap an exercise or a routine', p: 'Train is home. A short sheet asks whether your phone is recording too. Answer, then tap Start.', run: async function (t) {
+      show('train'); watch('ready'); await wait(1600, t);
       await press($('t-biceps'), t); hideTap();
+      $('t-sheet').classList.add('on'); await wait(1400, t);
+      await press($('t-thigh'), t, 80); $('t-thigh').classList.add('sel'); $('t-go').classList.remove('dis'); await wait(500, t);
+      await press($('t-go'), t); hideTap(); $('t-sheet').classList.remove('on'); await wait(300, t);
     } },
     { id: 'set', chip: 'Set', h: 'Start, lift, tap Done', p: 'Check how the watch is worn, tap Start and do your reps. The watch records your movement and heart rate.', run: async function (t) {
       show('ex'); watch('ready'); $('t-chip').textContent = '00:04'; await wait(1500, t);
