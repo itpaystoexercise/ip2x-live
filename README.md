@@ -1,13 +1,13 @@
-# IP2X — Website (production)
+# IP2X — Website
 
-**This is the production repo, deployed to https://ip2x.co.uk via GitHub Pages on every push to `main`.** Staging lives in the `ip2x-site` repo (https://itpaystoexercise.github.io/ip2x-site/) — test changes there first, then promote them here.
+**This is the only site repo. Every push to `main` deploys to https://ip2x.co.uk via GitHub Pages (1–3 minutes).** There is no staging site any more: `ip2x-site` was the staging copy until 2026-10-14, drifted two months ahead of production, and is archived (see "How changes land" below).
 
-Static marketing site for IP2X. No build step, no dependencies beyond Google Fonts. Everything renders straight from the file system or any static host.
+Static marketing site for IP2X, plus the tester guides under `/guides/`. No build step, no dependencies beyond Google Fonts. Everything renders straight from the file system or any static host.
 
 ## Structure
 
 ```
-ip2x-site/
+ip2x-live/
 ├── index.html              ← Homepage (everyone)
 ├── partners/
 │   └── index.html          ← B2B partners page (insurers, employers, GLP-1 providers)
@@ -18,7 +18,14 @@ ip2x-site/
 │   │   └── styles.css      ← All styling. Brand tokens at the top.
 │   ├── js/
 │   │   └── main.js         ← Nav scroll, FAQ accordions, scroll-reveal
-│   └── img/                ← For founder photos and any future imagery
+│   ├── img/
+│   │   ├── avatars/        ← Pep & Pip stills
+│   │   ├── guides/apple/   ← Screens and exercise stills used by the tester guide
+│   │   └── video-posters/  ← Click-to-play poster frames for the exercise clips
+│   └── video/              ← Exercise demo clips (Pep & Pip)
+├── guides/
+│   ├── index.html          ← Guides index
+│   └── apple/index.html    ← Tester guide for iPhone + Apple Watch (android/, garmin/ later)
 ├── README.md
 └── .gitignore
 ```
@@ -28,6 +35,7 @@ URLs once deployed:
 - `/` — homepage
 - `/partners/` — partners page
 - `/glp1/` — GLP-1 cohort landing page
+- `/guides/` and `/guides/apple/` — tester guides (the app links here; keep the paths stable)
 
 ## Editing the most common things
 
@@ -39,13 +47,31 @@ URLs once deployed:
 
 **FAQs** — search `faq-list` in `index.html`. Each `<div class="faq-item">` is one Q+A.
 
+**Exercise videos** — search `video-grid` in `index.html`. Clips live in `assets/video/`, poster frames in `assets/img/video-posters/`. Videos are click-to-play (`preload="none"`), so adding a clip costs nothing until someone presses play; keep clips transcoded small (the current set is 0.4–3 MB each).
+
 **Partner page copy** — `partners/index.html`. The three audience cards correspond to GLP-1 Providers, Insurers and Employers.
 
 **GLP-1 page copy** — `glp1/index.html`. Worth pressure-testing the muscle-loss statistics with Dr Nic before this goes live.
 
-## Deploying
+## How changes land
 
-Push to `main`. The GitHub Actions workflow in `.github/workflows/pages.yml` publishes the repo root to GitHub Pages at https://ip2x.co.uk automatically (1–3 minutes).
+1. Branch, edit, open a PR. There is no build step, so review is the diff plus a local preview:
+   ```bash
+   python3 -m http.server 8000   # from the repo root, then open http://localhost:8000/
+   ```
+   A PR branch can also be checked out and served the same way. Per-PR preview URLs
+   (Cloudflare Pages / Netlify) were considered on 2026-10-14 and not set up: the site is
+   small and static, and a local preview covers it. Revisit if more than one person edits.
+2. The owner's say-so merges it (same rule as the app repo: a PR is never merged on
+   the author's own judgement). Push to `main` deploys — the GitHub Actions workflow in
+   `.github/workflows/pages.yml` publishes the repo root to https://ip2x.co.uk.
+3. Check the live page once it has deployed; Pages caches, so hard-refresh.
+
+**Why one repo (2026-10-14):** the previous split — `ip2x-site` for staging, this repo for
+production — had the site under an `ip2x-site/` subfolder on one side and at the root on
+the other, so nothing merged across and every promotion was a hand copy. Staging ended up
+seven commits (the video showcase) ahead of the live site for two months. The drift was
+promoted once and `ip2x-site` archived with a pointer here.
 
 ## What's a placeholder
 
