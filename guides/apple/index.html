@@ -65,37 +65,40 @@
 <div class="wrap g-layout">
 <!-- Section nav: a sticky list on the left on wide screens, chips on phones
      (owner, 22 Nov 2026, #337). Groups follow the tester's journey. -->
-<aside class="g-side">
+<aside class="g-side" id="sections">
   <nav class="toc" aria-label="Sections">
     <div class="toc-group"><span>Get set up</span>
       <a href="#movie">See it first</a>
-      <a href="#need">What you need</a>
-      <a href="#invite">Accept the invite</a>
-      <a href="#must">The two must-dos</a>
-      <a href="#onboard">First launch</a>
-      <a href="#check">Check my setup</a>
+      <a href="#need">1 · What you need</a>
+      <a href="#invite">2 · Accept the invite</a>
+      <a href="#onboard">3 · First launch</a>
+      <a href="#check">4 · Check my setup</a>
     </div>
     <div class="toc-group"><span>Train</span>
       <a href="#train">Train &amp; count reps</a>
       <a href="#phone">The phone question</a>
-      <a href="#routines">Routines</a>
-      <a href="#live">Run it from the website</a>
     </div>
-    <div class="toc-group"><span>Your account</span>
-      <a href="#account">Your name &amp; website</a>
+    <div class="toc-group"><span>On the website</span>
+      <a href="#website">Log in</a>
+      <a href="#routines">Routines</a>
+      <a href="#live">Run a session from it</a>
+    </div>
+    <div class="toc-group"><span>Keep it working</span>
+      <a href="#updates">Keep IP2X up to date</a>
+      <a href="#account">Recovery code &amp; data</a>
       <a href="#help">If something's off</a>
     </div>
   </nav>
 </aside>
 <div class="g-main">
 <header>
-  <p class="small muted guide-version">Guide v18 · 22 November 2026 · for IP2X build 6, update v0.3.57 · new: <a href="#live">run a session from the website</a>, plus <a href="#routines">routines</a> and <a href="#account">your website</a></p>
+  <p class="small muted guide-version">Guide v19 · 23 November 2026 · for IP2X build 6, update v0.3.57 · new in v19: clearer sections, and every button name checked against the app</p>
 </header>
 
 <!-- ============ WHAT YOU NEED ============ -->
 <section id="need">
   <header>
-    <div class="g-eyebrow">Before you start</div>
+    <div class="g-eyebrow">Step 1 · Before you start</div>
     <h2>What you need</h2>
   </header>
   <div class="needs">
@@ -129,7 +132,7 @@
 <!-- ============ INVITE ============ -->
 <section id="invite">
   <header>
-    <div class="g-eyebrow">Step one</div>
+    <div class="g-eyebrow">Step 2</div>
     <h2>Accept the invite and install</h2>
   </header>
   <div class="figure-row">
@@ -169,81 +172,37 @@
   </div>
   <div class="note">
     <b>Updates come through TestFlight too.</b>
-    <span>When we release a new build, TestFlight lets you know. Tap <strong>Update</strong>, then follow the steps in <a href="#must">Keep the app up to date</a>, just below.</span>
-  </div>
-</section>
-
-<!-- ============ THE TWO MUST-DOS ============ -->
-<section id="must" class="must" aria-label="The two things that matter most">
-  <div class="g-eyebrow">Read these two before your first launch. Nearly every "it's not working" comes back to one of them.</div>
-
-  <div class="mustcard upd">
-    <h2><span class="num">1</span>Keep the app up to date</h2>
-    <p>Updates come in two sizes, and you'll handle each a little differently.</p>
-    <div class="twoups">
-      <div><b>Small updates · arrive by themselves</b>Most fixes go straight into the app, with nothing to install. The app downloads them quietly while it's open, and <strong>uses them only when it next starts from scratch</strong>. Sending it to the background doesn't count. The steps below make that happen.</div>
-      <div><b>Big updates · install from TestFlight</b>Some changes, especially to the watch app, need a new install. When one is ready, the app shows a card on its home screen, <em>A newer IP2X is in TestFlight</em>, and TestFlight shows an <strong>Update</strong> button next to IP2X. Tap the card, or open TestFlight yourself. See the TestFlight steps further down.</div>
-    </div>
-    <h3 class="subh">For a small update: tap the card</h3>
-    <p>The app looks for small updates when you open it and again each time you come back to it. Once one has downloaded, this card appears at the top of the home screen (never while a session is running). Tap it and the app restarts on the new version:</p>
-    <figure class="appcard-fig">
-      <div class="appcard" role="img" aria-label="The small-update card as it appears on the home screen"><b>A small update is ready</b><span>Tap to restart IP2X and use it. It takes a second.</span></div>
-      <figcaption>The card as it appears on the home screen. One tap, and the version number at the bottom of the screen changes.</figcaption>
-    </figure>
-    <p><strong>No card?</strong> Give the app a moment in the foreground, or do it by hand:</p>
-    <div class="flow" aria-label="How an update reaches you">
-      <span>Open the app, wait ~30 s</span><i>→</i><span>Swipe it away in the app switcher</span><i>→</i><span>Open it again</span><i>→</i><span>New version running ✓</span>
-    </div>
-    <ol>
-      <li>When we tell you there's an update, open IP2X and leave it open for about <strong>30 seconds</strong> while it downloads.</li>
-      <li><strong>Close it completely:</strong> swipe up from the bottom of the screen and pause to see the app switcher, then flick IP2X up and away.</li>
-      <li>Open it again. That launch runs the new version.</li>
-      <li><strong>Check you're on it:</strong> the app shows its <strong>code version</strong> on the home screen and at the bottom of Settings. It should match the version we sent you. If it doesn't, do steps 1–3 once more.</li>
-    </ol>
-    <h3 class="subh">For a big update: install it from TestFlight</h3>
-    <p>When a big update is waiting for your phone, the home screen shows this card instead. Tapping it opens TestFlight:</p>
-    <figure class="appcard-fig">
-      <div class="appcard" role="img" aria-label="The TestFlight card as it appears on the home screen"><b>A newer IP2X is in TestFlight</b><span>Open TestFlight and tap Update, then open IP2X again. Your watch gets the fix with it.</span></div>
-      <figcaption>The card as it appears on the home screen. It stays until the new build is installed.</figcaption>
-    </figure>
-    <ol>
-      <li>Open the <strong>TestFlight</strong> app.</li>
-      <li>Find <strong>IP2X</strong> and tap <strong>Update</strong>. The watch app updates along with it, which can take a few minutes.</li>
-      <li>Open IP2X. If a small update is waiting for the new build, the home screen shows <em>A small update is ready</em> within a minute; tap it. Until then the code version can read <em>untagged</em>. That's expected.</li>
-      <li>The version number has gone up. Run <strong>Check my setup</strong> once to confirm the phone and watch still work together, and allow anything the watch asks for.</li>
-      <li><strong>Updating to 0.3.14?</strong> The first launch asks <a href="#answers">a few questions about you</a>, once, then goes to your home screen. The Health sheet may show once more, with new rows for date of birth, sex, height and weight. Allow it.</li>
-    </ol>
-    <p class="why"><strong>Please install big updates soon.</strong> Small fixes only reach the newest version, so an old install quietly stops getting them. Tip: in TestFlight, open IP2X and turn on <strong>Automatic Updates</strong>, and big updates install by themselves.</p>
-  </div>
-
-  <div class="mustcard perm">
-    <h2><span class="num">2</span>Allow every permission, on the phone <em>and</em> the watch</h2>
-    <p>Without these, a session looks fine on screen but <strong>records nothing</strong>, and the app can't always tell you why. There are three permissions, and they come at different moments:</p>
-    <div class="perms">
-      <div><b>📱 iPhone · Health</b>At your first launch, sometimes before you've even typed your name. Turn on everything, including date of birth, sex, height and weight, then tap Allow.</div>
-      <div><b>⌚ Watch · Health</b>The first time you open IP2X on the watch. Allow it on your wrist.</div>
-      <div><b>⌚ Watch · Motion &amp; Fitness</b>At your first set or the setup check. Allow it on your wrist.</div>
-    </div>
-    <ol>
-      <li><strong>Say yes to every sheet.</strong> If you tap "Don't Allow" by mistake, iOS won't ask again. Turn it on yourself: iPhone <strong>Health</strong> app → your picture (top right) → <strong>Apps</strong> → <strong>IP2X</strong> → turn on all categories.</li>
-      <li><strong>If the watch asks during a session, allow both prompts on your wrist and keep going.</strong> Your phone app closes when you allow Motion &amp; Fitness. That's iOS, not a crash: open IP2X again and it rejoins the session. Afterwards run <strong>Check my setup</strong> once, so you see <strong>Ready to record</strong>.</li>
-      <li><strong>Changing a permission in Settings makes the app restart.</strong> That's iOS, not a crash. Just open it again.</li>
-      <li><strong>Pressed End on the phone but the watch still shows the workout?</strong> Press <strong>End</strong> on the watch as well. We're fixing this.</li>
-    </ol>
-    <p class="why">The phone can't see what you allowed on the watch, so <a href="#check">Check my setup</a> is how you find out. Aim for <strong>Ready to record</strong>.</p>
+    <span>When we release a new build, TestFlight lets you know. Tap <strong>Update</strong>, then follow <a href="#updates">Keep IP2X up to date</a>.</span>
   </div>
 </section>
 
 <!-- ============ ONBOARDING ============ -->
 <section id="onboard">
   <header>
-    <div class="g-eyebrow">Step two</div>
+    <div class="g-eyebrow">Step 3</div>
     <h2>First launch</h2>
   </header>
 
+  <div class="must" id="permissions">
+  <div class="mustcard perm">
+    <h3 class="musth"><span class="num">!</span>Allow every permission, on the phone <em>and</em> the watch</h3>
+    <p>Without these, a session looks fine on screen but <strong>records nothing</strong>, and the app can't always tell you why. Setup asks for all three, in this order:</p>
+    <div class="perms">
+      <div><b>📱 iPhone · Health</b>After you've typed your name, on <em>Let's gather your health data</em>. Turn on everything, including Workouts, date of birth, sex, height and weight, then tap Allow.</div>
+      <div><b>⌚ Watch · Health</b>When you open IP2X on the watch during <em>Let's set up your watch</em>. Turn everything on, including Workouts.</div>
+      <div><b>⌚ Watch · Motion &amp; Fitness</b>During the setup check. Allow it on your wrist.</div>
+    </div>
+    <ol>
+      <li><strong>Say yes to every sheet.</strong> If you tap "Don't Allow" by mistake, iOS won't ask again. Turn it on yourself: iPhone <strong>Health</strong> app → your picture (top right) → <strong>Apps</strong> → <strong>IP2X</strong> → turn on all categories.</li>
+      <li><strong>IP2X may close when you allow a permission.</strong> Allowing Motion &amp; Fitness, or changing a permission in the iPhone's Settings, can close the app on your phone or watch. That's iOS, not a crash, and nothing is lost: open IP2X again and carry on. If it happened during a session, the app picks the session back up.</li>
+    </ol>
+    <p class="why">The phone can't see what you allowed on the watch, so <a href="#check">Check my setup</a> is how you find out. Aim for <strong>Ready to record</strong>.</p>
+  </div>
+  </div>
+
   <div class="note">
     <b>After installing or updating, the app finishes the job itself.</b>
-    <span>Within a minute of opening it, the home screen may show <em>A small update is ready</em>. Tap it and the app restarts on the newest version. Nothing else to do.</span>
+    <span>Within a minute of opening it, the home screen may show <em>A small update is ready</em> or <em>A small update is available</em>. Tap it and the app restarts on the newest version. Nothing else to do.</span>
   </div>
 
   <div class="figure-row">
@@ -251,7 +210,7 @@
       <li><div><h3>Tell us your name</h3><p>The first screen says <strong>Welcome to IP2X</strong> and asks <strong>What's your name?</strong> Your name is how we label your data, and nothing else. As you type, the app checks it: <em>✓ That name is free.</em></p><p class="small muted"><strong>Your name is tied to this phone.</strong> Once it's set, the app won't let you change it, so your history stays yours. If you ever reinstall, type exactly the same name. If the app says <em>That name is already in use</em>, enter your <a href="#account">recovery code</a> and tap <strong>Use my recovery code</strong>.</p></div></li>
       <li><div><h3>Tap <em>Let's get set up</em>, then save your recovery code</h3><p>The screen tells you what happens next: <em>we bring in your recent health data, we ask a few questions about you, we set up your watch.</em> A new name then gets a <strong>Save your recovery code</strong> screen. Tap <strong>Save this code</strong>, keep it somewhere safe, then tap <strong>I've saved it</strong>.</p></div></li>
       <li><div><h3>Allow Health access</h3><p><strong>Let's gather your health data</strong> explains that IP2X brings in your last 60 days from Health, which takes a minute or two. Tap <strong>Allow Health access</strong>. In the iOS sheet, turn on everything, <strong>including Workouts</strong>, and tap <strong>Allow</strong>. IP2X saves your sessions to Health as workouts, and reads your date of birth, sex, height and weight so some answers are filled in for you.</p><p class="small muted">Keep IP2X open while your data loads. A thin bar at the top of the next screens shows how far it has got.</p></div></li>
-      <li><div><h3 id="answers">Answer a few questions about you</h3><p>Eight questions, one per screen: when you were born (month and year), your sex at birth, your height, your weight, which wrist wears the watch, your dominant hand, how often you train, and whether you take medication that affects your heart rate. The first screen says why: <em>they help us read your heart rate fairly and map your watch's movement</em>. Tap <strong>I agree, continue</strong>.</p><p>Scroll each wheel to your answer and tap <strong>Next</strong>; on the last one, tap <strong>Save</strong>. Every question needs an answer, and <em>Prefer not to say</em> counts as one. Height and weight start in feet and stones; tap the toggle for cm and kg. Anything Health already knew is filled in for you, so just check it. Your age sets your heart-rate limit unless you've set one yourself in Settings.</p><p class="small muted">If you finish before your data has loaded, the app shows <strong>Finishing up</strong> for a moment. After a couple of minutes you can tap <strong>Continue, we'll finish in the background</strong>.</p></div></li>
+      <li><div><h3 id="answers">Answer a few questions about you</h3><p>Eight questions, one per screen: when you were born (month and year), your sex at birth, your height, your weight, which wrist wears the watch, your dominant hand, how often you train, and whether you take medication that affects your heart rate. The first screen says why: <em>they help us read your heart rate fairly and map your watch's movement</em>. Tap <strong>I agree, continue</strong>.</p><p>Scroll each wheel to your answer and tap <strong>Next</strong>; on the last one, tap <strong>Save</strong>. Every question needs an answer, and <em>Prefer not to say</em> counts as one. Height and weight start in feet and stones; tap the toggle for cm and kg. Anything Health already knew is filled in for you, so just check it. Your age sets your heart-rate limit unless you've set one yourself under <strong>You → Heart-rate limit</strong>.</p><p class="small muted">If you finish before your data has loaded, the app shows <strong>Finishing up</strong> for a moment. After a couple of minutes you can tap <strong>Continue, we'll finish in the background</strong>.</p></div></li>
       <li><div><h3>Set up your watch</h3><p><strong>Let's set up your watch</strong> asks you to open IP2X on the watch. It asks you to review its Health permissions: turn everything on, <strong>including Workouts</strong>. Then tap <strong>Run the setup check</strong> on the phone, with the watch on. During the check the watch asks for <strong>Motion &amp; Fitness</strong>: allow it. <a href="#check">What the check tests</a>.</p><p class="small muted"><strong>IP2X may close when you allow Motion.</strong> That's iOS, and the screen warns you first. Open IP2X again: it says <strong>Welcome back</strong>. Tap <strong>Run the setup check again</strong>.</p></div></li>
       <li><div><h3>Fix anything the check flags</h3><p>Setup finishes only when nothing needs fixing. If a row fails, the app shows <strong>Let's fix this before you finish</strong> with what to do for each one, such as <strong>Allow Health access</strong> or <strong>Open the Health app</strong>. Do it, then tap <strong>Run the setup check again</strong>. A permission can't be skipped. If only the connection failed, you can tap <strong>Continue anyway</strong>.</p></div></li>
       <li><div><h3>Your phone as a second sensor</h3><p>The last screen, <strong>Use your phone as a second sensor</strong>, explains phone motion. Tap <strong>Turn on phone motion</strong> and allow <strong>Motion &amp; Fitness</strong> when iOS asks, or tap <strong>Not now</strong>. Either way, every session asks whether your phone is with you: <a href="#phone">the phone question</a>.</p></div></li>
@@ -283,22 +242,22 @@
 
   <div class="note">
     <b>Change or delete your answers any time.</b>
-    <span>Open <strong>Settings</strong> in the app and find <strong>Your answers</strong>. <strong>Edit</strong> walks you through the same screens with your current answers filled in. <strong>Delete</strong> asks you to tap twice, then removes your answers from the phone and from our server, and the app asks the questions again next time you open it.</span>
+    <span>Open the <strong>You</strong> tab and find <strong>Your answers</strong>. <strong>Edit</strong> walks you through the same screens with your current answers filled in. <strong>Delete</strong> asks you to tap twice, then removes your answers from the phone and from our server, and the app asks the questions again next time you open it.</span>
   </div>
+  <p class="small muted">After setup, the app shows a short three-card guide and offers a <strong>Practice</strong> session. Practice runs the whole flow (watch, timer, reps, upload) but never counts. It's a good way to try things out. You can open the guide again from <strong>You → Guide</strong>.</p>
   <div class="note">
-    <b>If the app restarts after you change a permission, that's iOS, not a crash.</b>
-    <span>iOS restarts an app when you change one of its permissions in Settings. Open IP2X again and carry on. Nothing is lost.</span>
+    <b>The app has three tabs.</b>
+    <span><strong>Train</strong> is home: start sessions and routines here. <strong>Activity</strong> shows today's sessions, this week, and your health charts. <strong>You</strong> holds your name and recovery code, your answers, the watch settings and <strong>Check my setup</strong>, your heart-rate limit, and <strong>Report a problem</strong>.</span>
   </div>
-  <p class="small muted">After setup, the app shows a short three-card guide and offers a <strong>Practice</strong> session. Practice runs the whole flow (watch, timer, reps, upload) but never counts. It's a good way to try things out.</p>
 </section>
 
 <!-- ============ SETUP CHECK ============ -->
 <section id="check">
   <header>
-    <div class="g-eyebrow">Step three</div>
+    <div class="g-eyebrow">Step 4</div>
     <h2>Check my setup</h2>
   </header>
-  <p><strong>Check my setup</strong> runs during setup, and setup only finishes once no row needs fixing. Afterwards it's on <strong>Train</strong> when nothing is recording, and in <strong>You</strong>. It takes about half a minute: it tests the phone's upload, then runs a short session on the watch. <strong>Wear the watch while it runs.</strong> If the watch asks for Motion &amp; Fitness during the check, tap <strong>Allow</strong> on your wrist.</p>
+  <p><strong>Check my setup</strong> runs during setup, and setup only finishes once no row needs fixing. Afterwards it's on <strong>Train</strong> when nothing is recording, and in <strong>You</strong> under <strong>Watch</strong>. It takes about half a minute: it tests the phone's upload, then runs a short session on the watch. <strong>Wear the watch while it runs.</strong> If the watch asks for Motion &amp; Fitness during the check, tap <strong>Allow</strong> on your wrist.</p>
 
   <div class="figure-row">
     <div style="display:grid; gap:14px">
@@ -352,7 +311,7 @@
       <thead><tr><th>Row</th><th>What it means</th><th>If it isn't ✓</th></tr></thead>
       <tbody>
         <tr><td>Phone can reach the server</td><td>Your phone is online and uploads are getting through.</td><td>Check Wi-Fi or mobile data. If the server was asleep, run it again in a minute.</td></tr>
-        <tr><td>Phone is collecting health data</td><td>Health records are actually arriving on the phone.</td><td>Often a <strong>?</strong> on a fresh install. If it keeps saying nothing arrived, check <strong>Health → Sharing → IP2X</strong>.</td></tr>
+        <tr><td>Phone is collecting health data</td><td>Health records are actually arriving on the phone.</td><td>Often a <strong>?</strong> on a fresh install. If it keeps saying nothing arrived, open the <strong>Health</strong> app → your picture (top right) → <strong>Apps</strong> → <strong>IP2X</strong> and turn everything on.</td></tr>
         <tr><td>Workouts can be saved to Health</td><td>IP2X is allowed to save your sessions to Health as workouts, on the phone and on the watch.</td><td>Allow Health access for IP2X and turn everything on, including <strong>Workouts</strong>. On the watch, open IP2X, review the Health permissions and turn on Workouts. Then run it again.</td></tr>
         <tr><td>Watch is paired with the app installed</td><td>Your iPhone can see a watch with IP2X on it.</td><td>Install IP2X on the watch from the <strong>Watch</strong> app on your iPhone.</td></tr>
         <tr><td>Watch answered the phone</td><td>The watch started a short session when the phone asked. That also proves the watch's Health permission is granted.</td><td>Open IP2X on the watch and allow the Health permission sheet.</td></tr>
@@ -372,7 +331,7 @@
 <!-- ============ TRAIN ============ -->
 <section id="train">
   <header>
-    <div class="g-eyebrow">Step four</div>
+    <div class="g-eyebrow">Every session</div>
     <h2>Train, and count your reps honestly</h2>
   </header>
 
@@ -487,7 +446,7 @@
     <p class="small muted">Spoof whenever you like, but always label it Spoof. A faked set saved as a real set teaches the system the wrong thing.</p>
     <div class="note">
       <b>Made a mistake?</b>
-      <span>Tapped the wrong button, or entered a rep count that's clearly wrong? Get in touch with us and tell us roughly when the set was. We'll decide what to do with it. A count that's off by one is fine, no need to tell us.</span>
+      <span>Tapped the wrong button, or entered a rep count that's clearly wrong? Tell us with <strong>Report a problem</strong>, and say roughly when the set was. We'll decide what to do with it. A count that's off by one is fine, no need to tell us.</span>
     </div>
   </div>
 
@@ -555,7 +514,7 @@
 <!-- ============ THE PHONE QUESTION (#300, #306) ============ -->
 <section id="phone">
   <header>
-    <div class="g-eyebrow">Every session</div>
+    <div class="g-eyebrow">At the start of every session</div>
     <h2>The phone question</h2>
     <p>Every session starts with <strong>Record your phone's movement too?</strong> With the phone in your pocket, IP2X records how it moves, as a second sensor for your legs and hips. Your watch records as usual either way.</p>
   </header>
@@ -569,6 +528,22 @@
   <p class="small muted">If you turned Motion &amp; Fitness off, the sheet says so and offers <strong>Turn it on in You</strong>. You can still answer <strong>No, not this time</strong> and train.</p>
 </section>
 
+<!-- ============ THE WEBSITE (#292, #308) ============ -->
+<section id="website">
+  <header>
+    <div class="g-eyebrow">On the website</div>
+    <h2>Log in to my.ip2x.co.uk</h2>
+  </header>
+  <p>Look at your sessions, each one's heart-rate curve, and download everything we hold about you. There's no password: the app gives you a code, the way a banking app does.</p>
+  <ol class="g-steps">
+    <li><div><h3>Get a code in the app</h3><p>Go to <strong>You → Log in to the website</strong>. You'll see a 6-digit code. It works once and lasts 2 minutes; tap <strong>Get a new code</strong> if it runs out.</p></div></li>
+    <li><div><h3>Log in on the website</h3><p>Go to <strong>my.ip2x.co.uk</strong> (or tap <strong>Log in</strong> at the top of ip2x.co.uk) and type your name and the code.</p></div></li>
+    <li><div><h3>Sign out when you're done</h3><p>You stay logged in for 8 hours. On a shared computer, open <strong>Account</strong> on the website and log out. Left yourself logged in somewhere? In the app, open <strong>You → Log in to the website</strong> and tap <strong>Sign out of the website everywhere</strong>.</p></div></li>
+  </ol>
+  <p class="small muted">Only type a login code on my.ip2x.co.uk, and only one you just got from your own app. We'll never ask you for one.</p>
+  <p>On the website you can <a href="#routines">plan routines</a> and <a href="#live">run a session</a> from another device. Its pages are <strong>Sessions</strong>, <strong>Routines</strong>, <strong>Live</strong> and <strong>Account</strong>.</p>
+</section>
+
 <!-- ============ ROUTINES (#306, #308) ============ -->
 <section id="routines">
   <header>
@@ -579,7 +554,7 @@
 
   <h3>Make one on my.ip2x.co.uk</h3>
   <ol class="g-steps">
-    <li><div><h3>Open Routines</h3><p>Log in to <strong>my.ip2x.co.uk</strong> (<a href="#account">how</a>). At the top, tap <strong>Routines</strong>, then <strong>New routine</strong>.</p></div></li>
+    <li><div><h3>Open Routines</h3><p>Log in to <strong>my.ip2x.co.uk</strong> (<a href="#website">how</a>). At the top, tap <strong>Routines</strong>, then <strong>New routine</strong>.</p></div></li>
     <li><div><h3>Add exercises</h3><p>Search or pick exercises to add them. Use the arrows to move one up or down, and × to take one out.</p></div></li>
     <li><div><h3>Name it and save</h3><p>Type a name, like <strong>Monday legs</strong>, and tap <strong>Save routine</strong>.</p></div></li>
   </ol>
@@ -617,7 +592,7 @@
 
   <h3>Hand over to the website</h3>
   <ol class="g-steps">
-    <li><div><h3>Log in on the other device</h3><p>Open <strong>my.ip2x.co.uk</strong> on the laptop or tablet and log in (<a href="#account">how</a>). Tap <strong>Live</strong> at the top.</p></div></li>
+    <li><div><h3>Log in on the other device</h3><p>Open <strong>my.ip2x.co.uk</strong> on the laptop or tablet and log in (<a href="#website">how</a>). Tap <strong>Live</strong> at the top.</p></div></li>
     <li><div><h3>Say Yes when the session starts</h3><p>On the phone, the start sheet asks <strong>Control this session from a different device?</strong> Tap <strong>Yes, from my.ip2x.co.uk</strong>, then <strong>Start</strong>. Already in a session? Tap <strong>Control from the web</strong> on the session screen.</p></div></li>
     <li><div><h3>Put the phone away</h3><p>The phone goes black and says <strong>Controlled from the web</strong>. It keeps the screen on so it can keep listening to the website. Pocket it as you would for <a href="#phone">phone motion</a>: screen facing out, top pointing up. If the battery is at 30% or less and not charging, the phone first asks, for example, <em>Battery at 25%. Keeping the screen on uses more. Hand over anyway?</em> On the website, a line suggests taking back control if the battery drops to 15%.</p></div></li>
   </ol>
@@ -629,7 +604,7 @@
     <div class="need"><h3>End the session</h3><p>Tap <strong>End session</strong>. The phone takes over again by itself.</p></div>
     <div class="need"><h3>Know it's live</h3><p>While a session is running, <strong>Live</strong> has a pulsing green dot on every page. The Live page says who is in control: <em>Website in control</em>, <em>Paused</em> or <em>Phone in control</em>.</p></div>
   </div>
-  <p class="small muted">A button on the website does nothing until the phone confirms it, usually within a second. If the website says <em>Your phone isn't responding</em>, the phone has lost its connection or you left the app: see below.</p>
+  <p class="small muted">A button on the website does nothing until the phone confirms it, usually within a second. If the website says <em>Your phone isn't responding. Open IP2X on it and tap Resume.</em>, the phone has lost its connection or you left the app: see below.</p>
 
   <h3>Take control back on the phone</h3>
   <p>Press and hold the circle on the black screen for <strong>3 seconds</strong>. A quick tap does nothing, so it won't stop in your pocket. The phone shows the normal session screen and the website shows <em>Phone in control</em>. To hand over again, tap <strong>Control from the web</strong>.</p>
@@ -642,21 +617,51 @@
   </div>
 </section>
 
-<!-- ============ HELP ============ -->
+<!-- ============ UPDATES ============ -->
+<section id="updates">
+  <header>
+    <div class="g-eyebrow">Now and then</div>
+    <h2>Keep IP2X up to date</h2>
+    <p>Nearly every "it's not working" comes back to an old version or a missing permission. Updates come in two sizes.</p>
+  </header>
+  <div class="twoups">
+    <div><b>Small updates · one tap in the app</b>Most fixes go straight into the app, with nothing to install from TestFlight. A card on the home screen tells you, and one tap restarts IP2X on the new version.</div>
+    <div><b>Big updates · install from TestFlight</b>Some changes, especially to the watch app, need a new install. The home screen shows <em>A newer IP2X is in TestFlight</em>, and TestFlight shows an <strong>Update</strong> button next to IP2X.</div>
+  </div>
+
+  <h3 class="subh">For a small update: tap the card</h3>
+  <p>The app looks for small updates when you open it and each time you come back to it. One of these cards appears at the top of <strong>Train</strong> (never while a session is running). Tap it and the app restarts on the new version:</p>
+  <figure class="appcard-fig">
+    <div class="appcard" role="img" aria-label="The small-update card when the update has downloaded"><b>A small update is ready</b><span>Tap to restart IP2X and use it. It takes a second.</span></div>
+    <div class="appcard" role="img" aria-label="The small-update card when the update has not downloaded yet"><b>A small update is available</b><span>Tap to install it. IP2X restarts in a few seconds.</span></div>
+    <figcaption>The two cards as they appear on Train. You'll see one or the other.</figcaption>
+  </figure>
+  <p><strong>Check you're on it:</strong> open <strong>You</strong>. Under your name it says <strong>code</strong> and a version, like <em>code v0.3.57</em>. It should match the version we told you about.</p>
+  <p class="small muted"><strong>No card, and the version is old?</strong> Open IP2X and leave it open for about 30 seconds. Then close it completely (swipe up from the bottom of the screen, pause, and flick IP2X up and away) and open it again.</p>
+
+  <h3 class="subh">For a big update: install it from TestFlight</h3>
+  <figure class="appcard-fig">
+    <div class="appcard" role="img" aria-label="The TestFlight card as it appears on Train"><b>A newer IP2X is in TestFlight</b><span>Open TestFlight and tap Update, then open IP2X again. Your watch gets the fix with it.</span></div>
+    <figcaption>Tapping the card opens TestFlight. It stays until the new build is installed.</figcaption>
+  </figure>
+  <ol>
+    <li>Open the <strong>TestFlight</strong> app, find <strong>IP2X</strong> and tap <strong>Update</strong>. The watch app updates along with it, which can take a few minutes.</li>
+    <li>Open IP2X. If a small update is waiting for the new build, a small-update card appears within a minute; tap it. Until then the code version can read <em>untagged</em>. That's expected.</li>
+    <li>Run <strong>Check my setup</strong> once to confirm the phone and watch still work together, and allow anything the watch asks for.</li>
+  </ol>
+  <p class="why"><strong>Please install big updates soon.</strong> Small fixes only reach the newest build, so an old install quietly stops getting them. Tip: in TestFlight, open IP2X and turn on <strong>Automatic Updates</strong>, and big updates install by themselves.</p>
+</section>
+
+<!-- ============ ACCOUNT ============ -->
 <section id="account">
   <header>
     <div class="g-eyebrow">Your account</div>
-    <h2>Your name, recovery code and website</h2>
+    <h2>Your name, recovery code and data</h2>
     <p>IP2X has no email and no password. Your name is your account, and your phone keeps a hidden key that proves the name is yours. Your workouts are saved on our server under that name, so they aren't lost if the app is.</p>
   </header>
 
-  <h3>Save your recovery code</h3>
-  <p>The recovery code gets your name back if your phone ever loses its hidden key.</p>
-  <ol class="g-steps">
-    <li><div><h3>Update the app</h3><p>When the home screen shows <em>A small update is ready</em>, tap it. You need update <strong>v0.3.40 or later</strong>.</p></div></li>
-    <li><div><h3>Save the code when it appears</h3><p>A <strong>Save your recovery code</strong> card appears once. Tap <strong>Save this code</strong> and keep it in Notes, a password manager, or a screenshot. Then tap <strong>I've saved it</strong>.</p></div></li>
-    <li><div><h3>Find it again any time</h3><p>Go to <strong>You → Settings → Recovery code</strong> and tap <strong>Show recovery code</strong>.</p></div></li>
-  </ol>
+  <h3>Your recovery code</h3>
+  <p>The recovery code gets your name back if your phone ever loses its hidden key. You saved it during setup. To see it again, open <strong>You</strong> and tap <strong>Show recovery code</strong> under your name, then <strong>Save this code</strong> to keep a copy in Notes, a password manager, or a screenshot.</p>
   <p class="small muted">A code is 12 letters and numbers in three groups, like <strong>ABCD-EFGH-JKLM</strong> (an example). Capitals don't matter, and you can type it with or without the dashes. Treat it like a password.</p>
 
   <h3>If you delete the app or change phone</h3>
@@ -667,11 +672,11 @@
     </div>
     <div class="need">
       <h3>A new phone set up fresh, or a lost or reset phone</h3>
-      <p>Type your name. The app says it's already in use and asks for your recovery code. Enter it and your name and history come back. You then get a <strong>new</strong> code to save; the old one stops working.</p>
+      <p>Type your name. The app says <em>That name is already in use</em> and asks for your recovery code. Enter it and tap <strong>Use my recovery code</strong>: your name and history come back. You then get a <strong>new</strong> code to save; the old one stops working.</p>
     </div>
     <div class="need">
       <h3>Lost the code as well</h3>
-      <p>Tell us. Once we've confirmed it's you, we'll help you get your name back.</p>
+      <p>Email <a href="mailto:hello@ip2x.com">hello@ip2x.com</a>. Once we've confirmed it's you, we'll help you get your name back.</p>
     </div>
   </div>
   <div class="note">
@@ -679,24 +684,16 @@
     <span>Anything recorded but not yet uploaded lives only on your phone, and deleting the app deletes it.</span>
   </div>
 
-  <h3>See your data on my.ip2x.co.uk</h3>
-  <p>Look at your sessions, each one's heart-rate curve, and download everything we hold about you. There's no password: the app gives you a code, the way a banking app does. You need update <strong>v0.3.44 or later</strong>.</p>
-  <ol class="g-steps">
-    <li><div><h3>Get a code in the app</h3><p>Go to <strong>You → Log in to the website</strong>. You'll see a 6-digit code. It works once and lasts 2 minutes; tap <strong>Get a new code</strong> if it runs out.</p></div></li>
-    <li><div><h3>Log in on the website</h3><p>Go to <strong>my.ip2x.co.uk</strong> (or tap <strong>Log in</strong> at the top of ip2x.co.uk) and type your name and the code.</p></div></li>
-    <li><div><h3>Sign out when you're done</h3><p>You stay logged in for 8 hours. On a shared computer, sign out on the website. Left yourself logged in somewhere? In the app, tap <strong>Sign out of the website everywhere</strong>.</p></div></li>
-  </ol>
-  <p class="small muted">Only type a login code on my.ip2x.co.uk, and only one you just got from your own app. We'll never ask you for one.</p>
-  <p>The website is also where you <a href="#routines">plan your routines</a> and <a href="#live">run a session</a> from another device.</p>
-
   <h3>Deleting your data</h3>
-  <p>You can ask us to delete everything we hold about you at any time: sessions, heart-rate and motion readings, your health answers and your name. Log in to my.ip2x.co.uk, open your account and ask us to delete your data. A person on the team handles it by hand, within a month, as UK data protection law requires. Backup copies delete themselves within 14 days after that. Once your data is gone your name goes too, so you won't be able to log in afterwards.</p>
+  <p>You can ask us to delete everything we hold about you at any time: sessions, heart-rate and motion readings, your health answers and your name. <a href="#website">Log in to my.ip2x.co.uk</a>, open <strong>Account</strong> and tap <strong>Ask us to delete my data</strong>. We'll get in touch to confirm before anything is removed. A person on the team handles it by hand, within a month, as UK data protection law requires. Backup copies delete themselves within 14 days after that. Once your data is gone your name goes too, so you won't be able to log in afterwards.</p>
+  <p class="small muted">On <strong>Account</strong> you can also tap <strong>Download my data</strong> for every session, set and heart-rate reading we hold for you, as one file.</p>
   <div class="note">
     <b>Delete the app from your phone too.</b>
     <span>If IP2X is still installed, it keeps saving new workouts under your name after we've deleted your data.</span>
   </div>
 </section>
 
+<!-- ============ HELP ============ -->
 <section id="help">
   <header>
     <div class="g-eyebrow">When things go sideways</div>
@@ -709,7 +706,7 @@
     </details>
     <details>
       <summary>"Watch did not confirm the session"</summary>
-      <p>Usually a watch permission hasn't been allowed yet. Open IP2X on the watch and allow the Health sheet. Do one warm-up set with your wrist up so the Motion &amp; Fitness prompt appears, then allow it. Then run <strong>Check my setup</strong>.</p>
+      <p>Usually a watch permission hasn't been allowed yet. Open IP2X on the watch and allow the Health sheet, then run <strong>Check my setup</strong> with the watch on and allow <strong>Motion &amp; Fitness</strong> on your wrist if it asks.</p>
     </details>
     <details>
       <summary>"Motion data isn't reaching the phone — keep the watch close."</summary>
@@ -729,12 +726,12 @@
       <p>Looking in the <strong>Fitness</strong> app (or <strong>Health</strong> → <strong>Workouts</strong>)? Your IP2X session isn't listed under the name IP2X. Look for <strong>Functional Strength Training</strong>; tap it and you'll see IP2X as the source.</p>
     </details>
     <details>
-      <summary>The Health sheet popped up before I'd typed my name</summary>
-      <p>A timing quirk on a brand-new install. Allow it, then type your name and carry on. It won't ask again.</p>
+      <summary>I pressed End on the phone, but the watch still shows the workout</summary>
+      <p>Press <strong>End</strong> on the watch as well. We're fixing this.</p>
     </details>
     <details>
       <summary>I want to change one of my answers</summary>
-      <p>Open <strong>Settings</strong>, find <strong>Your answers</strong> and tap <strong>Edit</strong>. Change what you need and tap <strong>Save</strong> on the last screen.</p>
+      <p>Open <strong>You</strong>, find <strong>Your answers</strong> and tap <strong>Edit</strong>. Change what you need and tap <strong>Save</strong> on the last screen.</p>
     </details>
     <details>
       <summary>The app won't let me change my name</summary>
@@ -743,12 +740,13 @@
   </div>
   <div class="note">
     <b>Tell us anything, any time.</b>
-    <span>Use <strong>Report a problem</strong> at the bottom of the Session screen. It sends us your note along with the details we need to look into it.</span>
+    <span>Tap <strong>Report a problem</strong> at the bottom of <strong>Train</strong>, or in <strong>You</strong>. It sends us your note along with the details we need to look into it. You can also email <a href="mailto:hello@ip2x.com">hello@ip2x.com</a>.</span>
   </div>
 </section>
 
+<a class="to-sections" href="#sections">↑ Sections</a>
 <footer>
-  <span>IP2X tester guide · updated 22 November 2026</span>
+  <span>IP2X tester guide · v19 · updated 23 November 2026</span>
   <span>Phone and watch drawings are illustrations made from the app's own on-screen text. Exercise images are stills from our own illustrated demo clips.</span>
 </footer>
 </div>
